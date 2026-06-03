@@ -3,201 +3,181 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Team Building — The View Bouznika</title>
+<title>Dossier Team Building — The View Bouznika</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ocean:#0d3b4f;
-  --ocean-deep:#072a3a;
-  --teal:#1c7293;
-  --sand:#f6efe4;
-  --cream:#fbf7f0;
-  --gold:#c9a25a;
-  --ink:#1d2b30;
-  --muted:#6b7b80;
-  --line:rgba(13,59,79,.12);
+  --deep:#14303a;
+  --deep2:#0c2128;
+  --ivory:#f8f4ec;
+  --cream:#fcfaf4;
+  --paper:#fffdf8;
+  --gold:#b8924f;
+  --gold-soft:#cda968;
+  --ink:#1b2327;
+  --muted:#6e7a7e;
+  --line:rgba(20,48,58,.13);
 
-  /* accents par offre */
+  /* accents offres */
   --koh:#1f8a70;
-  --colo:#f08a3c;
-  --sound:#8e5bd1;
-  --dar:#c25a3c;
-  --vibes:#e0b13a;
+  --colo:#d97b29;
+  --sound:#7b4bbf;
+  --dar:#a8443a;
+  --vibes:#b8901f;
+  --grand:#1a5276;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
-body{
-  font-family:'Manrope',system-ui,sans-serif;
-  color:var(--ink);
-  background:var(--cream);
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Jost',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.68;-webkit-font-smoothing:antialiased;font-weight:300}
 h1,h2,h3,h4,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.12}
-.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 30px}
+em{font-family:'Cormorant Garamond',serif;font-style:italic}
 
-/* ---------- NAV ---------- */
-nav{
-  position:sticky;top:0;z-index:50;
-  background:rgba(7,42,58,.92);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;letter-spacing:.5px;text-decoration:none}
-.brand span{color:var(--gold)}
-.navlinks{display:flex;gap:26px;list-style:none}
-.navlinks a{color:rgba(255,255,255,.78);text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.4px;text-transform:uppercase;transition:color .2s}
-.navlinks a:hover{color:var(--gold)}
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(12,33,40,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(184,146,79,.2)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;letter-spacing:1px;text-decoration:none}
+.brand span{color:var(--gold-soft)}
+.navlinks{display:flex;gap:28px;list-style:none}
+.navlinks a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.74rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}
+.navlinks a:hover{color:var(--gold-soft)}
 @media(max-width:860px){.navlinks{display:none}}
 
-/* ---------- HERO ---------- */
+/* HERO */
 header.hero{
-  position:relative;
-  min-height:92vh;
-  display:flex;align-items:center;
-  background:
-    linear-gradient(180deg,rgba(7,42,58,.55) 0%,rgba(7,42,58,.78) 100%),
-    radial-gradient(1200px 600px at 70% -10%,rgba(28,114,147,.6),transparent),
-    linear-gradient(135deg,#0d3b4f 0%,#1c7293 55%,#0d3b4f 100%);
-  color:#fff;overflow:hidden;
+  position:relative;min-height:90vh;display:flex;align-items:center;color:#fff;overflow:hidden;
+  background:linear-gradient(180deg,rgba(8,25,31,.68),rgba(8,25,31,.84)),linear-gradient(135deg,#14303a,#1f4a52 60%,#0c2128);
 }
-.hero::after{
-  content:"";position:absolute;inset:0;
-  background:
-    radial-gradient(2px 2px at 20% 30%,rgba(255,255,255,.5),transparent),
-    radial-gradient(2px 2px at 80% 20%,rgba(255,255,255,.3),transparent),
-    radial-gradient(1px 1px at 60% 70%,rgba(255,255,255,.4),transparent);
-  opacity:.4;
-}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 500px at 72% 8%,rgba(184,146,79,.18),transparent)}
 .hero .wrap{position:relative;z-index:2}
-.eyebrow{display:inline-block;font-size:.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:22px}
-.hero h1{font-size:clamp(2.8rem,7vw,5.6rem);font-weight:700;letter-spacing:-1px}
-.hero h1 em{font-style:italic;color:var(--gold)}
-.hero p.lead{font-size:clamp(1.05rem,2.2vw,1.4rem);max-width:640px;margin-top:24px;color:rgba(255,255,255,.85);font-weight:300}
-.hero .meta{margin-top:38px;display:flex;gap:34px;flex-wrap:wrap}
-.hero .meta div{border-left:2px solid var(--gold);padding-left:14px}
-.hero .meta b{display:block;font-size:1.5rem;font-family:'Cormorant Garamond',serif}
-.hero .meta small{color:rgba(255,255,255,.7);font-size:.8rem;letter-spacing:1px;text-transform:uppercase}
-.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.6);font-size:.75rem;letter-spacing:2px;z-index:2}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.72rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);font-weight:600;margin-bottom:24px}
+.eyebrow::before,.eyebrow::after{content:"";width:32px;height:1px;background:var(--gold-soft);opacity:.55}
+.hero h1{font-size:clamp(2.8rem,7vw,5.4rem);font-weight:600;letter-spacing:-.5px}
+.hero h1 em{color:var(--gold-soft)}
+.hero p.lead{font-size:clamp(1rem,2vw,1.32rem);max-width:620px;margin-top:24px;color:rgba(255,255,255,.82);font-weight:300}
+.hero .meta{margin-top:40px;display:flex;gap:36px;flex-wrap:wrap}
+.hero .meta div b{display:block;font-size:1.7rem;font-family:'Cormorant Garamond',serif;color:var(--gold-soft)}
+.hero .meta div small{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.58)}
 
-/* ---------- SECTIONS ---------- */
-section{padding:88px 0}
-.section-tag{font-size:.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:14px}
-.section-title{font-size:clamp(2rem,4.5vw,3.2rem);color:var(--ocean);margin-bottom:18px}
-.section-intro{font-size:1.12rem;color:var(--muted);max-width:720px;font-weight:300}
-.alt{background:var(--sand)}
+/* SECTIONS */
+section{padding:90px 0}
+.tag{font-size:.72rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px}
+.s-title{font-size:clamp(2rem,4.5vw,3.2rem);color:var(--deep);margin-bottom:18px}
+.s-intro{font-size:1.1rem;color:var(--muted);max-width:720px;font-weight:300}
+.alt{background:var(--ivory)}
 
-/* ---------- BENCHMARK ---------- */
-.bench-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+/* BENCHMARK */
+.bench-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
 @media(max-width:820px){.bench-grid{grid-template-columns:1fr}}
-.bench-card{background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line);box-shadow:0 10px 30px rgba(13,59,79,.05)}
-.bench-card h3{font-size:1.5rem;color:var(--ocean);margin-bottom:6px}
-.bench-card .role{font-size:.78rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);font-weight:700;margin-bottom:14px}
-.bench-card p{font-size:.95rem;color:var(--muted)}
-.bench-card .weak{margin-top:14px;font-size:.85rem;color:var(--ocean);background:var(--sand);border-radius:8px;padding:10px 12px}
+.bench-card{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:26px;box-shadow:0 10px 28px rgba(20,48,58,.04)}
+.bench-card h3{font-size:1.45rem;color:var(--deep);margin-bottom:4px}
+.bench-card .role{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);font-weight:600;margin-bottom:12px}
+.bench-card p{font-size:.92rem;color:var(--muted)}
+.bench-card .weak{margin-top:12px;font-size:.84rem;color:var(--deep);background:var(--ivory);border-left:3px solid var(--gold);padding:9px 12px}
+.bench-grid-wide{grid-template-columns:repeat(3,1fr)}
+@media(max-width:1000px){.bench-grid-wide{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.bench-grid-wide{grid-template-columns:1fr}}
 
-.opportunity{margin-top:48px;background:linear-gradient(135deg,var(--ocean),var(--teal));border-radius:20px;padding:42px;color:#fff}
-.opportunity h3{font-size:1.9rem;margin-bottom:24px;color:#fff}
+.opportunity{margin-top:48px;background:linear-gradient(135deg,var(--deep),var(--deep2));border-radius:4px;padding:44px;color:#fff}
+.opportunity h3{font-size:1.9rem;margin-bottom:28px;color:#fff;font-family:'Cormorant Garamond',serif}
 .opp-list{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 @media(max-width:820px){.opp-list{grid-template-columns:1fr}}
-.opp-list .num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--gold);line-height:1}
-.opp-list p{color:rgba(255,255,255,.88);font-size:.95rem;margin-top:8px}
+.opp-list .num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--gold-soft);line-height:1;margin-bottom:8px}
+.opp-list p{color:rgba(255,255,255,.85);font-size:.93rem}
 
-/* ---------- OFFERS NAV ---------- */
+/* OFFERS NAV */
 .offers-intro{text-align:center;max-width:760px;margin:0 auto}
-.offer-chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:38px}
-.offer-chips a{text-decoration:none;font-weight:700;font-size:.85rem;padding:10px 18px;border-radius:40px;color:#fff;transition:transform .15s,filter .15s}
+.offer-chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:36px}
+.offer-chips a{text-decoration:none;font-weight:600;font-size:.78rem;letter-spacing:1px;text-transform:uppercase;padding:11px 20px;border-radius:2px;color:#fff;transition:transform .15s,filter .15s}
 .offer-chips a:hover{transform:translateY(-2px);filter:brightness(1.08)}
 
-/* ---------- OFFER BLOCK ---------- */
-.offer{padding:80px 0;border-top:1px solid var(--line)}
-.offer-head{display:flex;align-items:flex-start;gap:24px;flex-wrap:wrap}
-.offer-badge{
-  flex-shrink:0;width:84px;height:84px;border-radius:22px;
-  display:flex;align-items:center;justify-content:center;font-size:2.4rem;
-  box-shadow:0 12px 28px rgba(0,0,0,.12);
-}
+/* OFFER BLOCK */
+.offer{padding:80px 0;border-top:1px solid var(--line);position:relative}
+.offer-head{display:flex;align-items:flex-start;gap:22px;flex-wrap:wrap}
+.offer-badge{flex-shrink:0;width:80px;height:80px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;box-shadow:0 10px 24px rgba(0,0,0,.14)}
 .offer-head .titles{flex:1;min-width:260px}
-.offer-kicker{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:6px}
-.offer-head h2{font-size:clamp(2.1rem,4.5vw,3rem);color:var(--ocean);line-height:1.05}
-.offer-format{display:inline-block;margin-top:10px;font-size:.82rem;font-weight:700;letter-spacing:1px;padding:5px 14px;border-radius:30px;background:#fff;border:1px solid var(--line)}
-.offer-vibe{font-size:1.18rem;font-style:italic;font-family:'Cormorant Garamond',serif;color:var(--ink);margin-top:22px;max-width:760px}
+.offer-kicker{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:6px}
+.offer-head h2{font-size:clamp(2.1rem,4.5vw,3rem);color:var(--deep);line-height:1}
+.offer-format{display:inline-block;margin-top:10px;font-size:.76rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:6px 14px;border-radius:2px;background:var(--paper);border:1px solid var(--line);color:var(--muted)}
+.offer-vibe{font-size:1.18rem;font-style:italic;font-family:'Cormorant Garamond',serif;color:var(--ink);margin-top:22px;max-width:760px;line-height:1.38}
 
-.offer-meta{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+.offer-meta{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
 @media(max-width:680px){.offer-meta{grid-template-columns:1fr}}
-.offer-meta .box{background:#fff;border-radius:14px;padding:18px 20px;border:1px solid var(--line)}
-.offer-meta .box .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;color:var(--muted);margin-bottom:6px}
-.offer-meta .box p{font-size:.96rem}
+.offer-meta .box{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:18px 20px}
+.offer-meta .box .lbl{font-size:.68rem;text-transform:uppercase;letter-spacing:2px;font-weight:600;color:var(--muted);margin-bottom:6px}
+.offer-meta .box p{font-size:.95rem}
 
-/* timeline */
-.day-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--ocean);margin:42px 0 8px;display:flex;align-items:center;gap:12px}
-.day-title .dnum{font-size:.72rem;font-family:'Manrope';letter-spacing:1.5px;text-transform:uppercase;font-weight:800;color:#fff;padding:5px 12px;border-radius:30px}
-.timeline{margin-top:10px;border-left:2px solid var(--line);padding-left:0}
-.tl-row{display:grid;grid-template-columns:88px 1fr;gap:0;position:relative}
-.tl-row .time{font-weight:800;font-size:.9rem;color:var(--ocean);padding:12px 16px 12px 22px;position:relative}
-.tl-row .time::before{content:"";position:absolute;left:-7px;top:18px;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid var(--teal)}
-.tl-row .act{padding:12px 0 12px 8px;border-bottom:1px dashed var(--line);font-size:.96rem}
+/* TIMELINE */
+.day-title{font-family:'Cormorant Garamond',serif;font-size:1.55rem;color:var(--deep);margin:40px 0 8px;display:flex;align-items:center;gap:12px}
+.day-title .dnum{font-size:.68rem;font-family:'Jost';letter-spacing:2px;text-transform:uppercase;font-weight:600;color:#fff;padding:5px 12px;border-radius:2px}
+.timeline{margin-top:8px;border-left:1px solid var(--line);margin-left:4px}
+.tl-row{display:grid;grid-template-columns:88px 1fr;position:relative}
+.tl-row .time{font-weight:600;font-size:.88rem;color:var(--deep);padding:11px 14px 11px 22px;position:relative}
+.tl-row .time::before{content:"";position:absolute;left:-4px;top:16px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.tl-row .act{padding:11px 0 11px 8px;border-bottom:1px solid var(--line);font-size:.94rem;color:var(--ink)}
 .tl-row:last-child .act{border-bottom:none}
-.tl-row .act b{color:var(--ocean)}
+.tl-row .act b{font-weight:600;color:var(--deep)}
 
-/* twist */
-.twist{margin-top:34px;border-radius:16px;padding:26px 28px;color:#fff;position:relative;overflow:hidden}
-.twist .tl-tag{font-size:.74rem;letter-spacing:2px;text-transform:uppercase;font-weight:800;opacity:.85}
-.twist p{font-size:1.12rem;font-family:'Cormorant Garamond',serif;font-style:italic;margin-top:6px;line-height:1.4}
+/* TWIST */
+.twist{margin-top:32px;border-radius:4px;padding:28px 32px;color:#fff;position:relative;overflow:hidden}
+.twist .tl-tag{font-size:.7rem;letter-spacing:3px;text-transform:uppercase;font-weight:600;opacity:.9;margin-bottom:10px}
+.twist p{font-size:1.08rem;font-family:'Cormorant Garamond',serif;font-style:italic;line-height:1.4}
 
-/* logistics */
-.logi{margin-top:36px;background:#fff;border-radius:18px;border:1px solid var(--line);overflow:hidden}
-.logi-head{padding:18px 26px;font-weight:800;letter-spacing:1px;text-transform:uppercase;font-size:.8rem;color:#fff;display:flex;align-items:center;gap:10px}
+/* LOGISTICS */
+.logi{margin-top:32px;background:var(--paper);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.logi-head{padding:16px 26px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;font-size:.76rem;color:#fff;display:flex;align-items:center;gap:10px}
 .logi-body{padding:26px}
 .logi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 @media(max-width:820px){.logi-grid{grid-template-columns:1fr}}
-.logi-col h4{font-size:1.15rem;color:var(--ocean);margin-bottom:10px}
+.logi-col h4{font-size:1.1rem;color:var(--deep);margin-bottom:10px}
 .logi-col ul{list-style:none}
-.logi-col li{font-size:.9rem;color:var(--muted);padding:5px 0 5px 18px;position:relative}
-.logi-col li::before{content:"›";position:absolute;left:0;color:var(--gold);font-weight:800}
-.logi-foot{margin-top:22px;display:flex;gap:22px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:18px}
-.logi-foot .stat b{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--ocean);display:block}
-.logi-foot .stat small{font-size:.74rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
+.logi-col li{font-size:.88rem;color:var(--muted);padding:4px 0 4px 16px;position:relative}
+.logi-col li::before{content:"–";position:absolute;left:0;color:var(--gold);font-weight:600}
+.logi-foot{margin-top:20px;display:flex;gap:24px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:16px}
+.logi-foot .stat b{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--deep);display:block}
+.logi-foot .stat small{font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
 
-/* ---------- PRICING ---------- */
-.price-table{width:100%;border-collapse:collapse;margin-top:30px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(13,59,79,.06)}
-.price-table th,.price-table td{padding:14px 18px;text-align:left;font-size:.92rem;border-bottom:1px solid var(--line)}
-.price-table th{background:var(--ocean);color:#fff;font-size:.76rem;letter-spacing:1px;text-transform:uppercase}
-.price-table td.price{font-weight:800;color:var(--ocean);font-size:1rem}
-.price-table tr.ref td{background:var(--sand)}
-.price-table .ref-tag{font-size:.66rem;background:var(--gold);color:#fff;padding:2px 8px;border-radius:20px;margin-left:8px;font-weight:800;letter-spacing:.5px}
-.price-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:30px}
-@media(max-width:920px){.price-cards{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.price-cards{grid-template-columns:1fr}}
-.price-card{border-radius:14px;padding:20px;color:#fff;text-align:center}
-.price-card .nm{font-weight:800;font-size:.92rem;letter-spacing:.5px}
-.price-card .fmt{font-size:.74rem;opacity:.85;margin:4px 0 12px}
-.price-card .amt{font-family:'Cormorant Garamond',serif;font-size:2.2rem;line-height:1}
-.price-card .unit{font-size:.72rem;opacity:.85}
+/* PRICING */
+.price-cards{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;justify-content:center}
+.price-card{border-radius:4px;padding:22px 20px;color:#fff;text-align:center;min-width:150px;flex:1}
+.price-card .nm{font-weight:600;font-size:.88rem;letter-spacing:.5px;text-transform:uppercase}
+.price-card .fmt{font-size:.72rem;opacity:.8;margin:4px 0 14px}
+.price-card .amt{font-family:'Cormorant Garamond',serif;font-size:2.1rem;line-height:1}
+.price-card .unit{font-size:.7rem;opacity:.78}
 
-.options-table{width:100%;border-collapse:collapse;margin-top:26px;background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
-.options-table td{padding:12px 18px;border-bottom:1px solid var(--line);font-size:.92rem}
-.options-table td:last-child{text-align:right;font-weight:800;color:var(--ocean)}
+.price-table{width:100%;border-collapse:collapse;margin-top:28px;background:var(--paper);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.price-table th,.price-table td{padding:13px 16px;text-align:left;font-size:.9rem;border-bottom:1px solid var(--line)}
+.price-table th{background:var(--deep);color:#fff;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:500}
+.price-table td.price{font-weight:600;color:var(--deep)}
+.price-table tr:last-child td{border-bottom:none}
+.ref-tag{font-size:.62rem;background:var(--gold);color:#fff;padding:2px 7px;border-radius:2px;margin-left:6px;font-weight:600}
+.price-table tr.grand-row td{background:#eef4f9}
 
-.terms{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+.options-table{width:100%;border-collapse:collapse;margin-top:24px;background:var(--paper);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.options-table td{padding:11px 16px;border-bottom:1px solid var(--line);font-size:.92rem}
+.options-table tr:last-child td{border-bottom:none}
+.options-table td:last-child{text-align:right;font-weight:600;color:var(--deep)}
+
+/* TERMS */
+.terms{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}
 @media(max-width:680px){.terms{grid-template-columns:1fr}}
-.term{background:#fff;border-radius:12px;padding:18px 20px;border:1px solid var(--line);border-left:4px solid var(--gold)}
-.term b{color:var(--ocean)}
-.disclaimer{margin-top:26px;font-size:.85rem;color:var(--muted);background:#fff;border:1px dashed var(--line);border-radius:12px;padding:16px 20px}
+.term{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:4px;padding:16px 18px}
+.term b{color:var(--deep)}
+.disclaimer{margin-top:24px;font-size:.85rem;color:var(--muted);background:var(--paper);border:1px dashed var(--line);border-radius:4px;padding:14px 18px}
 
-/* ---------- FOOTER ---------- */
-footer{background:var(--ocean-deep);color:rgba(255,255,255,.8);padding:60px 0 40px;text-align:center}
-footer .brand{font-size:1.8rem;display:inline-block;margin-bottom:14px}
-footer p{font-size:.9rem;max-width:560px;margin:0 auto;color:rgba(255,255,255,.6)}
-footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
+/* PILLS */
+.pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.pill{font-size:.74rem;font-weight:500;padding:5px 12px;border-radius:2px;background:var(--paper);border:1px solid var(--line);color:var(--deep);letter-spacing:.3px}
 
-/* utility */
-.pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.pill{font-size:.76rem;font-weight:700;padding:5px 12px;border-radius:30px;background:#fff;border:1px solid var(--line);color:var(--ocean)}
-@media print{nav,.scroll-hint{display:none}.offer,section{page-break-inside:avoid}}
+/* FOOTER */
+footer{background:var(--deep2);color:rgba(255,255,255,.78);padding:60px 0 44px;text-align:center}
+footer .brand{font-size:1.9rem;display:inline-block;margin-bottom:10px}
+footer .sep{width:54px;height:1px;background:var(--gold);margin:20px auto}
+footer p{font-size:.9rem;max-width:580px;margin:0 auto;color:rgba(255,255,255,.52);font-weight:300}
+
+@media print{nav{display:none}.offer,section{page-break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -218,29 +198,29 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
   <div class="wrap">
     <span class="eyebrow">Dossier Commercial · Team Building</span>
     <h1>Vivez la <em>cohésion</em><br>face à l'océan</h1>
-    <p class="lead">Cinq expériences team building signées The View Bouznika — entre wellness mesurable, gastronomie et grand air, à 40 minutes de Casablanca et Rabat.</p>
+    <p class="lead">Six expériences team building signées The View Bouznika 5★ — wellness mesurable, gastronomie et grand air, de 15 à 200 participants, à 40 minutes de Casablanca et Rabat.</p>
     <div class="meta">
-      <div><b>5</b><small>Offres clés en main</small></div>
-      <div><b>3 J / 2 N</b><small>Format standard</small></div>
-      <div><b>15 → 80</b><small>Participants</small></div>
+      <div><b>6</b><small>Offres clés en main</small></div>
+      <div><b>2 à 3 J</b><small>Format standard</small></div>
+      <div><b>15 → 200</b><small>Participants</small></div>
       <div><b>40 min</b><small>de Casa & Rabat</small></div>
     </div>
   </div>
-  <div class="scroll-hint">— défiler —</div>
 </header>
 
-<!-- CONTEXTE -->
+<!-- POSITIONNEMENT -->
 <section id="contexte">
   <div class="wrap">
-    <div class="section-tag">Le positionnement</div>
-    <h2 class="section-title">Un seul lieu, mille façons de souder une équipe</h2>
-    <p class="section-intro">The View Bouznika réunit ce qu'aucun concurrent ne combine sur la côte : un <b>wellness médicalisé</b> (InBody, LPG, hammams, bains hydromassants), un <b>front de mer</b> avec golf adjacent et chapiteau, <b>trois restaurants</b> thématisés, le tout sur un site compact entre les deux capitales économiques. Ces cinq offres transforment ces atouts en expériences mémorables.</p>
-    <div class="pillrow" style="margin-top:24px">
+    <div class="tag">Le positionnement</div>
+    <h2 class="s-title">Un seul lieu, mille façons de souder une équipe</h2>
+    <p class="s-intro">The View Bouznika réunit ce qu'aucun concurrent ne combine sur la côte : un <b>wellness médicalisé 5★</b> (InBody, LPG, hammams, bains hydromassants), un <b>front de mer</b> avec golf adjacent et chapiteau modulable, <b>trois restaurants</b> thématisés et le <b>Chay Lounge</b> signature — le tout sur un site compact entre les deux capitales économiques.</p>
+    <div class="pillrow">
       <span class="pill">🌊 Front de mer</span>
-      <span class="pill">💪 Wellness médicalisé</span>
-      <span class="pill">⛳ Golf adjacent</span>
-      <span class="pill">🍽️ 3 restaurants</span>
-      <span class="pill">⛺ Chapiteau & salles</span>
+      <span class="pill">💪 Wellness médicalisé 5★</span>
+      <span class="pill">⛳ Golf 18 trous adjacent</span>
+      <span class="pill">🍵 Chay Lounge signature</span>
+      <span class="pill">🍽️ 3 restaurants thématisés</span>
+      <span class="pill">⛺ Chapiteau 200 pax</span>
       <span class="pill">🏊 2 piscines</span>
     </div>
   </div>
@@ -249,28 +229,46 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
 <!-- BENCHMARK -->
 <section id="benchmark" class="alt">
   <div class="wrap">
-    <div class="section-tag">Analyse de marché</div>
-    <h2 class="section-title">Ce que propose la concurrence</h2>
-    <p class="section-intro">Trois familles d'acteurs se partagent le marché du team building haut de gamme au Maroc. Chacune laisse un angle mort que The View peut occuper.</p>
+    <div class="tag">Analyse de marché</div>
+    <h2 class="s-title">Ce que propose la concurrence</h2>
+    <p class="s-intro">Six familles d'acteurs se partagent le marché du team building haut de gamme au Maroc. Chacune laisse un angle mort que The View peut occuper.</p>
 
-    <div class="bench-grid">
+    <div class="bench-grid bench-grid-wide" style="grid-template-columns:repeat(3,1fr)">
       <div class="bench-card">
         <h3>Mazagan Beach Resort</h3>
         <div class="role">El Jadida · MICE intégré</div>
         <p>250 ha, 7 km de plage, golf 18 trous. Argument : « un seul lieu, tous les formats ». Olympiades, équitation, quad, ateliers culinaires.</p>
-        <div class="weak"><b>Faille :</b> trop vaste donc peu intime, et le wellness n'est pas central.</div>
+        <div class="weak"><b>Faille :</b> site trop dispersé, peu intime, wellness non central dans le discours MICE.</div>
       </div>
       <div class="bench-card">
         <h3>Conrad Rabat Arzana</h3>
-        <div class="role">Plage des Nations · Premium feutré</div>
-        <p>Positionnement « haven away from the hustle » : gastronomie, spa, banquets. Team building peu structuré côté offres packagées.</p>
-        <div class="weak"><b>Faille :</b> s'appuie sur l'événementiel et la table, pas sur des programmes thématisés.</div>
+        <div class="role">Plage des Nations · 5★ Premium</div>
+        <p>Resort front de mer, gastronomie, spa, banquets. Ambiance feutrée, clientèle haute gamme.</p>
+        <div class="weak"><b>Faille :</b> team building peu structuré, pas d'offres packagées thématisées, pas de golf sur site.</div>
+      </div>
+      <div class="bench-card">
+        <h3>Sofitel Marrakech</h3>
+        <div class="role">Marrakech · 5★ Spa Shiseido</div>
+        <p>5★ urbain avec spa de réputation internationale, forte capacité MICE, piscines, jardins.</p>
+        <div class="weak"><b>Faille :</b> pas de front de mer, pas de golf sur site, 3h de Casa — éloigné des bassins d'entreprises côtiers.</div>
+      </div>
+      <div class="bench-card">
+        <h3>Fairmont Royal Palm</h3>
+        <div class="role">Marrakech · Resort golf 5★</div>
+        <p>Resort 5★ avec golf 18 trous, cadre paysager exceptionnel, équipements MICE haut de gamme.</p>
+        <div class="weak"><b>Faille :</b> 3h de route depuis Casablanca, positionnement ultra-luxe inaccessible pour les groupes corporate standard.</div>
+      </div>
+      <div class="bench-card">
+        <h3>Club Med La Palmeraie</h3>
+        <div class="role">Marrakech · Tout-inclus</div>
+        <p>Formule tout-compris, sports variés, grande capacité d'accueil, animations abondantes.</p>
+        <div class="weak"><b>Faille :</b> image « vacances en famille », manque de personnalisation premium et de wellness médicalisé.</div>
       </div>
       <div class="bench-card">
         <h3>Agences spécialisées</h3>
-        <div class="role">Red Rock · Morocco Retreats</div>
+        <div class="role">Red Rock · Morocco Retreats · AMA</div>
         <p>Formats packagés à thématique RH claire : outdoor, escape games, RSE, ateliers culturels, sport-aventure.</p>
-        <div class="weak"><b>Faille :</b> aucun lieu propre — ils dépendent des hôtels comme le vôtre.</div>
+        <div class="weak"><b>Faille :</b> aucun lieu propre — elles dépendent des hôtels comme le vôtre, sans wellness médicalisé intégré.</div>
       </div>
     </div>
 
@@ -279,15 +277,27 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
       <div class="opp-list">
         <div>
           <div class="num">01</div>
-          <p><b>Wellness mesurable.</b> InBody, LPG, programmes detox/vitalité intégrés au team building. Personne ne l'a sur la côte.</p>
+          <p><b>Wellness médicalisé et mesurable.</b> InBody, LPG, programmes detox/vitalité intégrés au team building. Personne ne l'a sur la côte atlantique marocaine.</p>
         </div>
         <div>
           <div class="num">02</div>
-          <p><b>Site compact & complet.</b> Front de mer + golf + chapiteau + 3 restaurants réunis, à l'inverse de Mazagan dispersé sur 250 ha.</p>
+          <p><b>Site 5★ compact et complet.</b> Front de mer + golf + chapiteau + 3 restaurants + spa 3 200 m² sur un seul domaine — à l'inverse de Mazagan dispersé sur 250 ha.</p>
         </div>
         <div>
           <div class="num">03</div>
-          <p><b>Proximité imbattable.</b> 40 min de Casablanca comme de Rabat — idéal pour les séminaires courts.</p>
+          <p><b>Proximité imbattable.</b> 40 min de Casablanca et de Rabat. Aucun resort 5★ avec ces équipements n'est aussi bien positionné entre les deux capitales économiques.</p>
+        </div>
+        <div>
+          <div class="num">04</div>
+          <p><b>Capacité jusqu'à 200 participants.</b> Chapiteau de grande envergure, plage privatisable, espaces modulables — là où les hôtels urbains saturent rapidement.</p>
+        </div>
+        <div>
+          <div class="num">05</div>
+          <p><b>Le Chay Lounge, une signature unique.</b> Thés de crus, Ghriyba maison, tea times — un actif de différenciation qu'aucun concurrent MICE ne possède en bord de mer.</p>
+        </div>
+        <div>
+          <div class="num">06</div>
+          <p><b>Souvenir tangible systématique.</b> À chaque offre : carnet de colo, zellige peint, clip vidéo, Ghriyba personnalisée — le client ne repart jamais sans un objet qui prolonge l'expérience.</p>
         </div>
       </div>
     </div>
@@ -297,15 +307,16 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
 <!-- OFFRES INTRO -->
 <section id="offres">
   <div class="wrap offers-intro">
-    <div class="section-tag" style="text-align:center">Les expériences</div>
-    <h2 class="section-title">Cinq univers, une même promesse</h2>
-    <p class="section-intro" style="margin:0 auto">Des programmes pensés comme des histoires à vivre, pas des plannings à subir. Chaque participant repart avec un souvenir tangible et l'envie de revenir.</p>
+    <div class="tag" style="text-align:center">Les expériences</div>
+    <h2 class="s-title">Six univers, une même promesse</h2>
+    <p class="s-intro" style="margin:0 auto">Des programmes pensés comme des histoires à vivre, pas des plannings à subir. Chaque participant repart avec un souvenir tangible et l'envie de revenir.</p>
     <div class="offer-chips">
-      <a href="#koh" style="background:var(--koh)">🏝️ Koh-Bouznika</a>
+      <a href="#koh" style="background:var(--koh)">🏝 Koh-Bouznika</a>
       <a href="#colo" style="background:var(--colo)">🎒 La Colo des Grands</a>
       <a href="#sound" style="background:var(--sound)">🎶 Sound System</a>
       <a href="#dar" style="background:var(--dar)">🇲🇦 Dar Dyalna</a>
       <a href="#vibes" style="background:var(--vibes)">☀️ Good Vibes Only</a>
+      <a href="#grand" style="background:var(--grand)">🏟 Ocean Summit</a>
     </div>
   </div>
 </section>
@@ -314,14 +325,14 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
 <div class="offer alt" id="koh">
   <div class="wrap">
     <div class="offer-head">
-      <div class="offer-badge" style="background:var(--koh);color:#fff">🏝️</div>
+      <div class="offer-badge" style="background:var(--koh);color:#fff">🏝</div>
       <div class="titles">
         <div class="offer-kicker" style="color:var(--koh)">Offre A · Aventure</div>
         <h2>Koh-Bouznika</h2>
-        <div class="offer-format">3 Jours / 2 Nuits · 30 à 80 pax</div>
+        <div class="offer-format">3 Jours / 2 Nuits · 30 à 120 participants</div>
       </div>
     </div>
-    <p class="offer-vibe">« Un Koh-Lanta version bord de mer — plus glamour, moins boueux. Tribus, totems, immunités, alliances secrètes… et le confort 4 étoiles le soir. »</p>
+    <p class="offer-vibe">« Un Koh-Lanta version bord de mer — plus glamour, moins boueux. Tribus, totems, immunités, alliances secrètes… et le confort <b>5 étoiles</b> le soir. »</p>
     <div class="offer-meta">
       <div class="box"><div class="lbl">Cible</div><p>Équipes commerciales, start-ups, agences en quête de fun et de compétition saine.</p></div>
       <div class="box"><div class="lbl">Fil rouge</div><p>Le groupe est divisé en tribus (Mer, Vent, Sable, Soleil) — classement et rebondissements sur 3 jours.</p></div>
@@ -329,35 +340,35 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
 
     <div class="day-title"><span class="dnum" style="background:var(--koh)">Jour 1</span> Naufragés en terre inconnue</div>
     <div class="timeline">
-      <div class="tl-row"><div class="time">10h30</div><div class="act">Arrivée, welcome juice au chiringuito, remise des room-keys</div></div>
-      <div class="tl-row"><div class="time">11h00</div><div class="act"><b>Cérémonie d'ouverture :</b> règles du jeu, tirage des tribus, distribution des bandanas</div></div>
-      <div class="tl-row"><div class="time">11h30</div><div class="act"><b>Atelier Totem :</b> totem en bois flotté, drapeau et cri de guerre sur la plage</div></div>
+      <div class="tl-row"><div class="time">10h30</div><div class="act"><b>Accueil au Chay Lounge :</b> thé signature The View (sélection de crus), Ghriyba maison, tea time à la marocaine — remise des room-keys</div></div>
+      <div class="tl-row"><div class="time">11h00</div><div class="act"><b>Cérémonie d'ouverture :</b> règles du jeu, tirage des tribus (Mer, Vent, Sable, Soleil), distribution des bandanas de couleur</div></div>
+      <div class="tl-row"><div class="time">11h30</div><div class="act"><b>Atelier Totem (1h) :</b> par tribu, sculpture d'un totem en bois flotté ramassé sur la plage, confection du drapeau de tribu (peinture tissu), composition du cri de guerre et de la danse d'intimidation — présentés aux autres tribus à 12h30</div></div>
       <div class="tl-row"><div class="time">13h00</div><div class="act">Déjeuner « naufragés » au chiringuito, pieds dans le sable</div></div>
-      <div class="tl-row"><div class="time">14h30</div><div class="act"><b>Épreuve 1 — Orientation :</b> parcours sur le domaine + golf, balises à énigmes</div></div>
+      <div class="tl-row"><div class="time">14h30</div><div class="act"><b>Épreuve 1 — Orientation :</b> 10 balises GPS sur le domaine (plage, jardin, golf) — chaque balise révèle une énigme, smartphone interdit, carte papier uniquement. La tribu qui collecte le plus de balises en 90 min remporte les points</div></div>
       <div class="tl-row"><div class="time">16h30</div><div class="act">Pause + 1ère rotation wellness (tribu en tête = hammam prioritaire)</div></div>
-      <div class="tl-row"><div class="time">19h30</div><div class="act">Apéro coucher de soleil</div></div>
-      <div class="tl-row"><div class="time">20h00</div><div class="act"><b>Dîner « Survivor BBQ »</b> autour du feu</div></div>
-      <div class="tl-row"><div class="time">21h30</div><div class="act"><b>1er Conseil de tribu :</b> débrief, stratégie, annonce du classement</div></div>
+      <div class="tl-row"><div class="time">19h30</div><div class="act">Apéro coucher de soleil au chiringuito</div></div>
+      <div class="tl-row"><div class="time">20h00</div><div class="act"><b>Dîner « Survivor BBQ »</b> autour du feu de camp</div></div>
+      <div class="tl-row"><div class="time">21h30</div><div class="act"><b>1er Conseil de tribu :</b> débrief, stratégie, annonce du classement au tableau</div></div>
     </div>
 
     <div class="day-title"><span class="dnum" style="background:var(--koh)">Jour 2</span> Les grandes épreuves</div>
     <div class="timeline">
       <div class="tl-row"><div class="time">7h30</div><div class="act">Réveil musculaire face mer (option)</div></div>
       <div class="tl-row"><div class="time">8h00</div><div class="act">Petit-déjeuner</div></div>
-      <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Épreuve 2 — Parcours d'aventure :</b> équilibre dans l'eau, parcours du combattant, puzzle géant, tir à l'arc</div></div>
+      <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Épreuve 2 — Parcours d'aventure (4 stations simultanées, rotation 15 min) :</b> ① Slacklines d'équilibre au-dessus du sable ; ② Boot Camp plage (pompes, gainage, relais en formation) ; ③ Puzzle géant 100 pièces pieds dans l'eau ; ④ Tir à l'arc sur cibles flottantes en bord de mer</div></div>
       <div class="tl-row"><div class="time">12h00</div><div class="act"><b>Épreuve de confort :</b> la tribu gagnante remporte l'accès VIP wellness</div></div>
       <div class="tl-row"><div class="time">13h00</div><div class="act">Déjeuner méditerranéen</div></div>
       <div class="tl-row"><div class="time">14h30</div><div class="act"><b>Rotation parallèle :</b> wellness (hammam / bain hydromassant / douche à jet) ↔ beach games + golf</div></div>
-      <div class="tl-row"><div class="time">16h30</div><div class="act"><b>Épreuve 3 — Dégustation à l'aveugle</b> (épices, miels, huiles)</div></div>
-      <div class="tl-row"><div class="time">20h00</div><div class="act">Dîner italien sous le chapiteau</div></div>
-      <div class="tl-row"><div class="time">21h30</div><div class="act"><b>Grand Conseil dramatique :</b> torches, « élimination » symbolique</div></div>
+      <div class="tl-row"><div class="time">16h30</div><div class="act"><b>Épreuve 3 — Dégustation à l'aveugle</b> (épices, miels, huiles d'olive)</div></div>
+      <div class="tl-row"><div class="time">20h00</div><div class="act">Dîner à Isola</div></div>
+      <div class="tl-row"><div class="time">21h30</div><div class="act"><b>Grand Conseil dramatique :</b> torches LED, « élimination » symbolique, classement mis à jour</div></div>
     </div>
 
     <div class="day-title"><span class="dnum" style="background:var(--koh)">Jour 3</span> La finale & les poteaux</div>
     <div class="timeline">
       <div class="tl-row"><div class="time">8h00</div><div class="act">Petit-déjeuner</div></div>
-      <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Épreuve mythique des poteaux :</b> équilibre sur la plage</div></div>
-      <div class="tl-row"><div class="time">11h00</div><div class="act"><b>Orientation finale</b> pour le collier d'immunité</div></div>
+      <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Épreuve mythique des poteaux :</b> 4 poteaux dans le sable (40 cm), un représentant par tribu monte dessus pieds joints et tient le plus longtemps possible — le dernier debout remporte l'immunité pour sa tribu. Ambiance musicale live, maître de jeu en direct</div></div>
+      <div class="tl-row"><div class="time">11h00</div><div class="act"><b>Course à l'immunité finale :</b> grand jeu de piste chrono sur tout le domaine — 5 énigmes en équipe, la dernière menant au trophée caché. La tribu qui le brandit en premier remporte la victoire</div></div>
       <div class="tl-row"><div class="time">12h00</div><div class="act"><b>Grand vote final</b> + couronnement, remise du trophée</div></div>
       <div class="tl-row"><div class="time">13h00</div><div class="act"><b>Brunch des vainqueurs</b> au bord de la piscine</div></div>
       <div class="tl-row"><div class="time">14h30</div><div class="act">Photo de groupe avec totems, départ</div></div>
@@ -369,17 +380,17 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
     </div>
 
     <div class="logi">
-      <div class="logi-head" style="background:var(--koh)">⚙️ Fiche logistique</div>
+      <div class="logi-head" style="background:var(--koh)">⚙ Fiche logistique</div>
       <div class="logi-body">
         <div class="logi-grid">
-          <div class="logi-col"><h4>Espaces</h4><ul><li>Plage (épreuves)</li><li>Golf adjacent</li><li>Chiringuito + feu de camp</li><li>Hammam / bains</li><li>Chapiteau (J2 + conseils)</li></ul></div>
-          <div class="logi-col"><h4>Matériel à acquérir</h4><ul><li>Kit tir à l'arc + cibles</li><li>Slackline / poteaux d'équilibre</li><li>Cordages + balises</li><li>Bandanas 4 couleurs</li><li>Torches de conseil (LED)</li></ul></div>
-          <div class="logi-col"><h4>Prestataires</h4><ul><li>1 maître de jeu (clé)</li><li>1 coach sécurité</li><li>Agents spa (rotations)</li><li>Surveillant baignade</li></ul></div>
+          <div class="logi-col"><h4>Espaces</h4><ul><li>Plage (épreuves)</li><li>Golf adjacent (balises)</li><li>Chiringuito + feu de camp</li><li>Chay Lounge (accueil)</li><li>Hammam / bains (rotations)</li><li>Chapiteau (J2 + conseils)</li></ul></div>
+          <div class="logi-col"><h4>Matériel à acquérir</h4><ul><li>Kit tir à l'arc + cibles flottantes</li><li>Slacklines × 4</li><li>Poteaux d'équilibre × 4</li><li>Puzzles géants × 4</li><li>Cordages + balises GPS</li><li>Bandanas 4 couleurs</li><li>Torches de conseil (LED)</li></ul></div>
+          <div class="logi-col"><h4>Prestataires</h4><ul><li>1 maître de jeu (poste clé)</li><li>1 coach sécurité</li><li>Agents spa (rotations)</li><li>Surveillant baignade</li></ul></div>
         </div>
         <div class="logi-foot">
           <div class="stat"><b>1 / 15</b><small>Animateur / pax</small></div>
-          <div class="stat"><b>5-6</b><small>Encadrants (60 pax)</small></div>
-          <div class="stat"><b>30-80</b><small>Jauge</small></div>
+          <div class="stat"><b>5-8</b><small>Encadrants (60-120 pax)</small></div>
+          <div class="stat"><b>30-120</b><small>Jauge</small></div>
         </div>
       </div>
     </div>
@@ -394,7 +405,7 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
       <div class="titles">
         <div class="offer-kicker" style="color:var(--colo)">Offre B · Nostalgie</div>
         <h2>La Colo des Grands</h2>
-        <div class="offer-format">3 Jours / 2 Nuits · 30 à 50 pax</div>
+        <div class="offer-format">3 Jours / 2 Nuits · 30 à 50 participants</div>
       </div>
     </div>
     <p class="offer-vibe">« La colonie de vacances qu'on aurait tous voulu avoir, version adulte. Nostalgie, rires, lâcher-prise total — l'offre qui crée le plus de complicité. »</p>
@@ -407,10 +418,10 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
     <div class="timeline">
       <div class="tl-row"><div class="time">11h00</div><div class="act">Arrivée, <b>distribution des kits de colo</b> (casquette, badge, carnet, gourde)</div></div>
       <div class="tl-row"><div class="time">11h30</div><div class="act">Constitution des chambrées + élection des chefs de chambrée</div></div>
-      <div class="tl-row"><div class="time">12h00</div><div class="act"><b>Grand jeu de piste de bienvenue</b> à la découverte du camp</div></div>
+      <div class="tl-row"><div class="time">12h00</div><div class="act"><b>Grand jeu de piste de bienvenue (45 min) :</b> 8 étapes à travers le domaine (chiringuito, plage, golf, spa, jardins, restaurants) — chaque étape révèle un indice sur le règlement de la colo. Format rallye papier, pas de smartphone. La chambrée qui trouve le mot de passe en premier décroche la meilleure table au déjeuner</div></div>
       <div class="tl-row"><div class="time">13h00</div><div class="act">Déjeuner convivial grandes tablées</div></div>
       <div class="tl-row"><div class="time">14h30</div><div class="act"><b>Goûter à l'ancienne :</b> crêpes & chocolat chaud au chiringuito</div></div>
-      <div class="tl-row"><div class="time">15h00</div><div class="act">Ateliers tournants : accrobranche soft / beach games / blason de chambrée</div></div>
+      <div class="tl-row"><div class="time">15h00</div><div class="act"><b>Ateliers tournants (3 stations × 30 min) :</b> Boot Camp plage (pompes, gainage, relais encadrés — accessible à tous) / Beach games (molkky, pétanque géante, badminton) / Blason de chambrée (création collective sur grand carton)</div></div>
       <div class="tl-row"><div class="time">19h30</div><div class="act">Dîner</div></div>
       <div class="tl-row"><div class="time">21h00</div><div class="act"><b>Veillée talents :</b> sketch / chanson par chambrée</div></div>
       <div class="tl-row"><div class="time">22h00</div><div class="act">Chamallows grillés au feu de camp</div></div>
@@ -422,7 +433,7 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
       <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Olympiades rétro</b> sur la plage : course en sac, tir à la corde, relais à 3 jambes, course à l'œuf</div></div>
       <div class="tl-row"><div class="time">12h00</div><div class="act"><b>Grande bataille d'eau</b> encadrée à la piscine</div></div>
       <div class="tl-row"><div class="time">13h00</div><div class="act">Déjeuner</div></div>
-      <div class="tl-row"><div class="time">14h30</div><div class="act">Ateliers détente : bracelets brésiliens, photo polaroid, rotation wellness</div></div>
+      <div class="tl-row"><div class="time">14h30</div><div class="act"><b>Ateliers détente (3 stations × 30 min) :</b> Séance hammam & gommage au sel (univers spa The View) / Atelier photo polaroid + légendes dans le carnet de colo / Initiation yoga nidra — relaxation guidée 20 min sous le chapiteau</div></div>
       <div class="tl-row"><div class="time">18h00</div><div class="act">Préparation des costumes de la boum</div></div>
       <div class="tl-row"><div class="time">20h00</div><div class="act">Dîner</div></div>
       <div class="tl-row"><div class="time">21h30</div><div class="act"><b>LA GRANDE BOUM</b> déguisée (thème années 90), DJ</div></div>
@@ -438,18 +449,18 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
       <div class="tl-row"><div class="time">14h30</div><div class="act">Départ — chacun repart avec son carnet de colo rempli</div></div>
     </div>
 
-    <div class="twist" style="background:linear-gradient(135deg,var(--colo),#c9621f)">
+    <div class="twist" style="background:linear-gradient(135deg,var(--colo),#b5641e)">
       <div class="tl-tag">Le twist qui change tout</div>
       <p>Le carnet de colo rempli — mots des collègues, polaroids, best-of des bêtises. Un souvenir émotionnel surpuissant, à coût quasi nul.</p>
     </div>
 
     <div class="logi">
-      <div class="logi-head" style="background:var(--colo)">⚙️ Fiche logistique</div>
+      <div class="logi-head" style="background:var(--colo)">⚙ Fiche logistique</div>
       <div class="logi-body">
         <div class="logi-grid">
-          <div class="logi-col"><h4>Espaces</h4><ul><li>Plage (olympiades)</li><li>Piscine (bataille d'eau)</li><li>Chapiteau (boum + veillée)</li><li>Chiringuito (goûter)</li></ul></div>
-          <div class="logi-col"><h4>Matériel à acquérir</h4><ul><li>Kits colo (casquettes, badges, carnets)</li><li>Matériel olympiades rétro</li><li>Crêpière + chamallows</li><li>Polaroids + pellicules</li><li>Déco « boum 90s »</li></ul></div>
-          <div class="logi-col"><h4>Prestataires</h4><ul><li>1 DJ (boum)</li><li>1 prof de yoga</li><li>Moniteurs costumés</li></ul></div>
+          <div class="logi-col"><h4>Espaces</h4><ul><li>Plage (olympiades, boot camp)</li><li>Piscine (bataille d'eau)</li><li>Chapiteau (boum + veillée)</li><li>Chiringuito (goûter)</li><li>Hammam / spa (ateliers détente)</li></ul></div>
+          <div class="logi-col"><h4>Matériel</h4><ul><li>Kits colo (casquettes, badges, carnets)</li><li>Matériel olympiades rétro</li><li>Crêpière + chamallows</li><li>Polaroids + pellicules</li><li>Déco « boum 90s »</li><li>Cônes + cordes boot camp</li></ul></div>
+          <div class="logi-col"><h4>Prestataires</h4><ul><li>1 DJ (boum)</li><li>1 prof de yoga</li><li>Moniteurs costumés</li><li>Coach boot camp (encadrement)</li></ul></div>
         </div>
         <div class="logi-foot">
           <div class="stat"><b>1 / 12</b><small>Moniteur / pax</small></div>
@@ -469,7 +480,7 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
       <div class="titles">
         <div class="offer-kicker" style="color:var(--sound)">Offre C · Festival</div>
         <h2>Bouznika Sound System</h2>
-        <div class="offer-format">3 Jours / 2 Nuits · 40 à 80 pax</div>
+        <div class="offer-format">3 Jours / 2 Nuits · 40 à 80 participants</div>
       </div>
     </div>
     <p class="offer-vibe">« Coachella au bord de l'Atlantique. Musique, création, énergie collective — et un contenu ultra-instagrammable pour les marques qui veulent rayonner. »</p>
@@ -493,7 +504,7 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
     <div class="day-title"><span class="dnum" style="background:var(--sound)">Jour 2</span> En studio & sur scène</div>
     <div class="timeline">
       <div class="tl-row"><div class="time">8h00</div><div class="act">Petit-déjeuner</div></div>
-      <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Atelier songwriting</b> avec coach musical : un tube célèbre aux couleurs de l'entreprise</div></div>
+      <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Atelier songwriting</b> avec coach musical : un tube célèbre réarrangé aux couleurs de l'entreprise</div></div>
       <div class="tl-row"><div class="time">11h30</div><div class="act">Atelier chorégraphie & mise en scène</div></div>
       <div class="tl-row"><div class="time">13h00</div><div class="act">Déjeuner</div></div>
       <div class="tl-row"><div class="time">14h30</div><div class="act"><b>Répétitions</b> par groupes + rotation wellness en parallèle</div></div>
@@ -509,25 +520,25 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
       <div class="tl-row"><div class="time">12h00</div><div class="act">Déjeuner léger</div></div>
       <div class="tl-row"><div class="time">14h00</div><div class="act"><b>LE GRAND CONCERT :</b> chaque groupe joue son hymne devant le jury, captation pro</div></div>
       <div class="tl-row"><div class="time">15h30</div><div class="act"><b>Remise des « disques d'or »</b> + photo de groupe</div></div>
-      <div class="tl-row"><div class="time">16h00</div><div class="act">Pot de clôture, départ (clip vidéo envoyé après)</div></div>
+      <div class="tl-row"><div class="time">16h00</div><div class="act">Pot de clôture, départ (clip vidéo envoyé sous 72h)</div></div>
     </div>
 
-    <div class="twist" style="background:linear-gradient(135deg,var(--sound),#5e35a8)">
+    <div class="twist" style="background:linear-gradient(135deg,var(--sound),#5a35a0)">
       <div class="tl-tag">Le twist qui change tout</div>
       <p>Captation pro de chaque performance, montée en clip vidéo remis à l'entreprise. Souvenir viral pour le client — et contenu en or pour vendre l'offre suivante.</p>
     </div>
 
     <div class="logi">
-      <div class="logi-head" style="background:var(--sound)">⚙️ Fiche logistique</div>
+      <div class="logi-head" style="background:var(--sound)">⚙ Fiche logistique</div>
       <div class="logi-body">
         <div class="logi-grid">
-          <div class="logi-col"><h4>Espaces</h4><ul><li>Plage (silent disco)</li><li>Chapiteau / plage (scène)</li><li>Salles de réunion (ateliers)</li><li>Hammam (« loge »)</li></ul></div>
+          <div class="logi-col"><h4>Espaces</h4><ul><li>Plage (silent disco + concert)</li><li>Chapiteau / plage (scène)</li><li>Salles de réunion (ateliers)</li><li>Hammam (« loge artistes »)</li></ul></div>
           <div class="logi-col"><h4>Matériel & location</h4><ul><li>Système silent disco (casques 3 canaux)</li><li>Scène + sono pro + éclairage</li><li>Captation vidéo pro</li><li>Lot de percussions</li><li>Bannières + peinture</li></ul></div>
           <div class="logi-col"><h4>Prestataires</h4><ul><li>1 coach musical / DJ producteur (clé)</li><li>1 technicien son & lumière</li><li>1 vidéaste pro</li></ul></div>
         </div>
         <div class="logi-foot">
           <div class="stat"><b>1 / 15</b><small>Animateur / pax</small></div>
-          <div class="stat"><b>16 min</b><small>Jauge plancher (rentabilité)</small></div>
+          <div class="stat"><b>16 min</b><small>Jauge plancher</small></div>
           <div class="stat"><b>40-80</b><small>Jauge optimale</small></div>
         </div>
       </div>
@@ -543,7 +554,7 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
       <div class="titles">
         <div class="offer-kicker" style="color:var(--dar)">Offre D · Culture</div>
         <h2>Dar Dyalna</h2>
-        <div class="offer-format">3 Jours / 2 Nuits · 30 à 50 pax</div>
+        <div class="offer-format">3 Jours / 2 Nuits · 30 à 50 participants</div>
       </div>
     </div>
     <p class="offer-vibe">« La chaleur de la grande famille marocaine, l'art de recevoir, le partage. Élégante et authentique — parfaite pour les clients étrangers et les incentives. »</p>
@@ -554,19 +565,19 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
 
     <div class="day-title"><span class="dnum" style="background:var(--dar)">Jour 1</span> L'accueil à la marocaine</div>
     <div class="timeline">
-      <div class="tl-row"><div class="time">11h00</div><div class="act">Arrivée, <b>thé à la menthe & cornes de gazelle</b>, eau de fleur d'oranger</div></div>
+      <div class="tl-row"><div class="time">11h00</div><div class="act"><b>Accueil au Chay Lounge :</b> thé signature The View (sélection de crus), Ghriyba maison, tea time à la marocaine — la première empreinte de l'hospitalité The View</div></div>
       <div class="tl-row"><div class="time">11h30</div><div class="act">Mot de bienvenue, constitution de la « grande famille »</div></div>
-      <div class="tl-row"><div class="time">12h00</div><div class="act"><b>Atelier « Souk » :</b> chasse aux ingrédients & épices dans le domaine</div></div>
-      <div class="tl-row"><div class="time">13h00</div><div class="act">Déjeuner méditerranéen du terroir</div></div>
-      <div class="tl-row"><div class="time">14h30</div><div class="act">Ateliers tournants : <b>henné & calligraphie</b> / wellness (hammam au savon noir)</div></div>
+      <div class="tl-row"><div class="time">12h00</div><div class="act"><b>Atelier « Souk » (1h) :</b> chaque binôme reçoit une liste d'ingrédients et d'épices (ras el hanout, safran, argan, cumin…) cachés en 12 points du domaine avec une énigme pour chaque localisation. Budget fictif de 100 DH — l'équipe avec le meilleur assortiment jugé par le chef démarre avec un avantage à l'atelier cuisine</div></div>
+      <div class="tl-row"><div class="time">13h00</div><div class="act">Déjeuner méditerranéen du terroir au V</div></div>
+      <div class="tl-row"><div class="time">14h30</div><div class="act"><b>Ateliers tournants (3 stations × 35 min) :</b> Pâtisserie Ghriyba avec notre pâtissier (noix de coco, sésame, eau de fleur d'oranger — sachet personnalisé à emporter) / Calligraphie arabe encadrée par un artiste / Hammam au savon noir & gommage kessa au spa</div></div>
       <div class="tl-row"><div class="time">20h00</div><div class="act"><b>Dîner du terroir</b> + conteur (halqa) au coin du feu</div></div>
     </div>
 
     <div class="day-title"><span class="dnum" style="background:var(--dar)">Jour 2</span> Les mains à la pâte</div>
     <div class="timeline">
       <div class="tl-row"><div class="time">8h00</div><div class="act">Petit-déjeuner</div></div>
-      <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Grand atelier cuisine en brigades :</b> pastilla, tajine, pâtisserie (rotation wellness « détox » en parallèle)</div></div>
-      <div class="tl-row"><div class="time">12h30</div><div class="act"><b>Déjeuner = leurs créations</b>, jury croisé</div></div>
+      <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Grand atelier cuisine en brigades :</b> pastilla, tajine, pâtisserie — rotation wellness « détox » en parallèle (hammam / bain hydromassant / LPG)</div></div>
+      <div class="tl-row"><div class="time">12h30</div><div class="act"><b>Déjeuner = leurs créations,</b> jury croisé</div></div>
       <div class="tl-row"><div class="time">14h30</div><div class="act">Atelier au choix : <b>zellige / poterie</b> ou <b>initiation Gnawa</b></div></div>
       <div class="tl-row"><div class="time">16h30</div><div class="act">Temps libre piscine / hammam</div></div>
       <div class="tl-row"><div class="time">20h00</div><div class="act"><b>Soirée lounge orientale</b> (musique live, derbouka)</div></div>
@@ -579,21 +590,21 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
       <div class="tl-row"><div class="time">11h30</div><div class="act"><b>Atelier carreau de zellige peint :</b> chacun y inscrit un mot / un engagement</div></div>
       <div class="tl-row"><div class="time">12h30</div><div class="act"><b>LE GRAND DÉJEUNER DE FÊTE</b> partagé, musique live</div></div>
       <div class="tl-row"><div class="time">14h00</div><div class="act"><b>Photo de famille</b> + remise des livrets de recettes</div></div>
-      <div class="tl-row"><div class="time">14h30</div><div class="act">Départ — avec son zellige + le livre de recettes de l'équipe</div></div>
+      <div class="tl-row"><div class="time">14h30</div><div class="act">Départ — avec son zellige + son sachet de Ghriyba + le livre de recettes de l'équipe</div></div>
     </div>
 
-    <div class="twist" style="background:linear-gradient(135deg,var(--dar),#9e4128)">
+    <div class="twist" style="background:linear-gradient(135deg,var(--dar),#7e3028)">
       <div class="tl-tag">Le twist qui change tout</div>
-      <p>Chacun repart avec un carreau de zellige peint à la main et le livre de recettes de l'équipe. Ancrage culturel rare — aucun concurrent corporate ne joue cette carte avec autant de soin.</p>
+      <p>Chacun repart avec un carreau de zellige peint à la main, son sachet de Ghriyba et le livre de recettes de l'équipe. Ancrage culturel rare — aucun concurrent corporate ne joue cette carte avec autant de soin.</p>
     </div>
 
     <div class="logi">
-      <div class="logi-head" style="background:var(--dar)">⚙️ Fiche logistique</div>
+      <div class="logi-head" style="background:var(--dar)">⚙ Fiche logistique</div>
       <div class="logi-body">
         <div class="logi-grid">
-          <div class="logi-col"><h4>Espaces</h4><ul><li>Cuisines des restaurants</li><li>Salles / chapiteau (ateliers)</li><li>Hammam traditionnel</li><li>Extérieurs (Dyafa)</li></ul></div>
-          <div class="logi-col"><h4>Matériel à acquérir</h4><ul><li>Carreaux de zellige bruts + peintures</li><li>Tour de poterie / argile</li><li>Savon noir & gants kessa</li><li>Déco orientale (tapis, lanternes)</li></ul></div>
-          <div class="logi-col"><h4>Prestataires</h4><ul><li>Maâlem Gnawa + musiciens</li><li>1 conteur (halqa)</li><li>Artistes henné + calligraphe</li><li>Maître artisan zellige</li></ul></div>
+          <div class="logi-col"><h4>Espaces</h4><ul><li>Chay Lounge (accueil)</li><li>Cuisines des restaurants</li><li>Salles / chapiteau (ateliers)</li><li>Hammam traditionnel</li><li>Extérieurs (Dyafa)</li></ul></div>
+          <div class="logi-col"><h4>Matériel à acquérir</h4><ul><li>Carreaux de zellige bruts + peintures</li><li>Tour de poterie / argile</li><li>Savon noir & gants kessa</li><li>Déco orientale (tapis, lanternes)</li><li>Sachets & packaging Ghriyba</li></ul></div>
+          <div class="logi-col"><h4>Prestataires</h4><ul><li>Maâlem Gnawa + musiciens</li><li>1 conteur (halqa)</li><li>Artiste calligraphe</li><li>Pâtissier (atelier Ghriyba)</li><li>Maître artisan zellige</li></ul></div>
         </div>
         <div class="logi-foot">
           <div class="stat"><b>1 / 12</b><small>Animateur / pax</small></div>
@@ -611,21 +622,21 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
     <div class="offer-head">
       <div class="offer-badge" style="background:var(--vibes);color:#fff">☀️</div>
       <div class="titles">
-        <div class="offer-kicker" style="color:#b8901f">Offre E · Feel-good</div>
+        <div class="offer-kicker" style="color:var(--vibes)">Offre E · Feel-good · Format court</div>
         <h2>Good Vibes Only</h2>
-        <div class="offer-format">2 Jours / 1 Nuit · ≤ 25 pax · Format court</div>
+        <div class="offer-format">2 Jours / 1 Nuit · ≤ 25 participants</div>
       </div>
     </div>
     <p class="offer-vibe">« Une parenthèse joyeuse et légère — rire, soleil, bien-être sans prise de tête. L'anti-séminaire stressant, et la porte d'entrée idéale pour faire goûter The View. »</p>
     <div class="offer-meta">
       <div class="box"><div class="lbl">Cible</div><p>Petites équipes (≤ 25), récompense de fin de trimestre, comités qui veulent souffler, week-ends.</p></div>
-      <div class="box"><div class="lbl">Fil rouge</div><p>Une seule règle : <i>Good Vibes Only</i>. Que du plaisir, zéro PowerPoint.</p></div>
+      <div class="box"><div class="lbl">Fil rouge</div><p>Une seule règle : <em>Good Vibes Only</em>. Que du plaisir, zéro PowerPoint.</p></div>
     </div>
 
     <div class="day-title"><span class="dnum" style="background:var(--vibes)">Jour 1</span> Lâcher-prise</div>
     <div class="timeline">
       <div class="tl-row"><div class="time">11h30</div><div class="act">Arrivée, <b>cocktail de bienvenue (mocktails)</b> au chiringuito face mer</div></div>
-      <div class="tl-row"><div class="time">12h00</div><div class="act">Mot d'accueil + règle unique : <i>Good Vibes Only</i></div></div>
+      <div class="tl-row"><div class="time">12h00</div><div class="act">Mot d'accueil + règle unique : <em>Good Vibes Only</em></div></div>
       <div class="tl-row"><div class="time">12h30</div><div class="act">Déjeuner détendu en terrasse</div></div>
       <div class="tl-row"><div class="time">14h00</div><div class="act"><b>Séance de yoga du rire</b> (désarme tout le monde en 10 min)</div></div>
       <div class="tl-row"><div class="time">15h00</div><div class="act"><b>Beach games décomplexés</b> (mölkky, pétanque, badminton, paddle)</div></div>
@@ -644,13 +655,13 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
       <div class="tl-row"><div class="time">13h30</div><div class="act">Photo de groupe, départ recentrés</div></div>
     </div>
 
-    <div class="twist" style="background:linear-gradient(135deg,var(--vibes),#c9961f)">
+    <div class="twist" style="background:linear-gradient(135deg,var(--vibes),#9e7518)">
       <div class="tl-tag">Le twist qui change tout</div>
       <p>Court, abordable, émotionnellement marquant — la marge opérationnelle est élevée et les clients reviennent ensuite sur un format 3 jours. Le produit d'appel parfait.</p>
     </div>
 
     <div class="logi">
-      <div class="logi-head" style="background:var(--vibes)">⚙️ Fiche logistique</div>
+      <div class="logi-head" style="background:var(--vibes)">⚙ Fiche logistique</div>
       <div class="logi-body">
         <div class="logi-grid">
           <div class="logi-col"><h4>Espaces</h4><ul><li>Chiringuito + terrasse</li><li>Plage</li><li>Piscine</li><li>Hammam / bains</li></ul></div>
@@ -667,46 +678,122 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
   </div>
 </div>
 
+<!-- ============ OFFRE F : OCEAN SUMMIT ============ -->
+<div class="offer" id="grand">
+  <div class="wrap">
+    <div class="offer-head">
+      <div class="offer-badge" style="background:var(--grand);color:#fff">🏟</div>
+      <div class="titles">
+        <div class="offer-kicker" style="color:var(--grand)">Offre F · Grand Format · 100-200 participants</div>
+        <h2>Ocean Summit</h2>
+        <div class="offer-format">3 Jours / 2 Nuits · 100 à 200 participants</div>
+      </div>
+    </div>
+    <p class="offer-vibe">« La seule formule team building 5 étoiles front de mer conçue pour les grands groupes — sans sacrifier ni la qualité, ni le wellness, ni la personnalisation. »</p>
+    <div class="offer-meta">
+      <div class="box"><div class="lbl">Cible</div><p>Grands groupes corporate (100-200 pax), conventions annuelles, kick-offs régionaux, séminaires de direction toutes équipes réunies.</p></div>
+      <div class="box"><div class="lbl">Fil rouge</div><p>8 à 10 tribus de 15-20 personnes. Chaque tribu contribue à une grande fresque collective révélée lors de la cérémonie finale.</p></div>
+    </div>
+
+    <div class="day-title"><span class="dnum" style="background:var(--grand)">Jour 1</span> Installation & immersion</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="time">10h-12h</div><div class="act"><b>Accueil en vagues par tribus (toutes les 20 min) au Chay Lounge :</b> thé signature & Ghriyba maison par groupe de 20 max — flux maîtrisé, zéro goulot d'étranglement</div></div>
+      <div class="tl-row"><div class="time">11h00</div><div class="act"><b>Cérémonie d'ouverture plénière</b> sous le chapiteau : discours du dirigeant, présentation des tribus, règles du jeu</div></div>
+      <div class="tl-row"><div class="time">12h30</div><div class="act">Déjeuner en grandes tablées — buffet méditerranéen sur terrasse et chiringuito</div></div>
+      <div class="tl-row"><div class="time">14h30</div><div class="act"><b>Épreuve de cohésion simultanée :</b> 8-10 ateliers parallèles sur tout le domaine, chaque tribu tourne toutes les 45 min — 1 maître de jeu central par talkie-walkie</div></div>
+      <div class="tl-row"><div class="time">17h00</div><div class="act"><b>Rotation wellness (1ère vague) :</b> 2 tribus par créneau de 30 min, les autres en free time piscine / plage</div></div>
+      <div class="tl-row"><div class="time">19h30</div><div class="act">Apéritif coucher de soleil — grande terrasse</div></div>
+      <div class="tl-row"><div class="time">20h30</div><div class="act"><b>Grand dîner festif</b> sous le chapiteau + plage — tables de tribu, musique live</div></div>
+    </div>
+
+    <div class="day-title"><span class="dnum" style="background:var(--grand)">Jour 2</span> Olympiades & fresque collective</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="time">8h00</div><div class="act">Petit-déjeuner</div></div>
+      <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Olympiades Ocean Summit :</b> 6 épreuves simultanées sur la plage (beach volley, relais aquatique, tir à la corde, puzzle géant, tir à l'arc, course de radeaux en bois flotté) — toutes les tribus en même temps, 1 encadrant par épreuve</div></div>
+      <div class="tl-row"><div class="time">13h00</div><div class="act">Déjeuner</div></div>
+      <div class="tl-row"><div class="time">14h30</div><div class="act"><b>Atelier fresque collective :</b> chaque tribu peint un panneau 1m × 1m représentant sa vision de l'entreprise — les 10 panneaux s'assemblent en une murale révélée à la cérémonie finale</div></div>
+      <div class="tl-row"><div class="time">17h00</div><div class="act">Rotation wellness (2ème vague)</div></div>
+      <div class="tl-row"><div class="time">20h00</div><div class="act"><b>Dîner thématique</b> — chaque table présente son panneau en 2 min</div></div>
+      <div class="tl-row"><div class="time">21h30</div><div class="act"><b>Grand Conseil :</b> annonce du classement, suspense maintenu jusqu'au J3</div></div>
+    </div>
+
+    <div class="day-title"><span class="dnum" style="background:var(--grand)">Jour 3</span> La grande finale & la fresque révélée</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="time">8h00</div><div class="act">Petit-déjeuner</div></div>
+      <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Épreuve finale simultanée :</b> 2 représentants par tribu pour l'épreuve des poteaux — le public encourage depuis la plage</div></div>
+      <div class="tl-row"><div class="time">11h00</div><div class="act"><b>Assemblage de la fresque collective :</b> les 10 panneaux sont réunis — révélation du nom de l'œuvre collective, choisie par vote</div></div>
+      <div class="tl-row"><div class="time">12h00</div><div class="act"><b>Cérémonie de clôture plénière :</b> remise du trophée, discours, photo de groupe officielle</div></div>
+      <div class="tl-row"><div class="time">13h00</div><div class="act">Brunch de victoire collectif</div></div>
+      <div class="tl-row"><div class="time">14h30</div><div class="act">Départ — chacun repart avec son bandana de tribu + photo de la fresque collective</div></div>
+    </div>
+
+    <div class="twist" style="background:linear-gradient(135deg,var(--grand),#0e3a52)">
+      <div class="tl-tag">Le twist qui change tout</div>
+      <p>La fresque collective de 10 m² assemblée le dernier jour — chaque tribu y a contribué sans voir le tout. La révélation est un moment de forte émotion. L'œuvre reste exposée à The View Bouznika comme trace durable de votre groupe.</p>
+    </div>
+
+    <div class="logi">
+      <div class="logi-head" style="background:var(--grand)">⚙ Fiche logistique</div>
+      <div class="logi-body">
+        <div class="logi-grid">
+          <div class="logi-col"><h4>Espaces</h4><ul><li>Chapiteau plénière (200 pax)</li><li>Chay Lounge (accueil vagues)</li><li>Plage privatisée (épreuves)</li><li>Terrasses + chiringuito (repas)</li><li>Spa (rotations wellness)</li><li>Golf adjacent (balises)</li></ul></div>
+          <div class="logi-col"><h4>Matériel</h4><ul><li>10 panneaux toile + peintures (fresque)</li><li>Kits tribus × 10 (bandanas, drapeaux)</li><li>Matériel olympiades × 6 postes</li><li>Sono + éclairage chapiteau</li><li>10 talkies-walkies (coordination)</li></ul></div>
+          <div class="logi-col"><h4>Prestataires</h4><ul><li>1 directeur de jeu (chef d'orchestre)</li><li>1 encadrant par poste (min 10)</li><li>Équipe spa renforcée</li><li>1 DJ / animateur soirée</li><li>1 vidéaste (capsule J+3)</li></ul></div>
+        </div>
+        <div class="logi-foot">
+          <div class="stat"><b>1 / 15-20</b><small>Encadrant / pax</small></div>
+          <div class="stat"><b>10-12 min</b><small>Encadrants</small></div>
+          <div class="stat"><b>100-200</b><small>Jauge</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ============ TARIFS ============ -->
 <section id="tarifs" class="alt">
   <div class="wrap">
-    <div class="section-tag">Grille tarifaire</div>
-    <h2 class="section-title">Investissement par participant</h2>
-    <p class="section-intro">Prix indicatifs par personne, TTC, base chambre double. Dégressifs selon la taille du groupe — les prestataires et locations étant des coûts fixes par événement.</p>
+    <div class="tag">Grille tarifaire</div>
+    <h2 class="s-title">Investissement par participant</h2>
+    <p class="s-intro">Prix indicatifs par personne, TTC, base chambre double. Dégressifs selon la taille du groupe.</p>
 
     <div class="price-cards">
-      <div class="price-card" style="background:var(--vibes)"><div class="nm">Good Vibes</div><div class="fmt">2J/1N</div><div class="amt">4 200</div><div class="unit">MAD / pax · réf.</div></div>
-      <div class="price-card" style="background:var(--colo)"><div class="nm">Colo des Grands</div><div class="fmt">3J/2N</div><div class="amt">6 200</div><div class="unit">MAD / pax · réf.</div></div>
-      <div class="price-card" style="background:var(--koh)"><div class="nm">Koh-Bouznika</div><div class="fmt">3J/2N</div><div class="amt">6 500</div><div class="unit">MAD / pax · réf.</div></div>
-      <div class="price-card" style="background:var(--dar)"><div class="nm">Dar Dyalna</div><div class="fmt">3J/2N</div><div class="amt">6 800</div><div class="unit">MAD / pax · réf.</div></div>
-      <div class="price-card" style="background:var(--sound)"><div class="nm">Sound System</div><div class="fmt">3J/2N</div><div class="amt">8 200</div><div class="unit">MAD / pax · réf.</div></div>
+      <div class="price-card" style="background:var(--vibes)"><div class="nm">Good Vibes</div><div class="fmt">2J / 1N</div><div class="amt">4 200</div><div class="unit">MAD / pax · réf.</div></div>
+      <div class="price-card" style="background:var(--colo)"><div class="nm">Colo des Grands</div><div class="fmt">3J / 2N</div><div class="amt">6 200</div><div class="unit">MAD / pax · réf.</div></div>
+      <div class="price-card" style="background:var(--koh)"><div class="nm">Koh-Bouznika</div><div class="fmt">3J / 2N</div><div class="amt">6 500</div><div class="unit">MAD / pax · réf.</div></div>
+      <div class="price-card" style="background:var(--dar)"><div class="nm">Dar Dyalna</div><div class="fmt">3J / 2N</div><div class="amt">6 800</div><div class="unit">MAD / pax · réf.</div></div>
+      <div class="price-card" style="background:var(--sound)"><div class="nm">Sound System</div><div class="fmt">3J / 2N</div><div class="amt">8 200</div><div class="unit">MAD / pax · réf.</div></div>
+      <div class="price-card" style="background:var(--grand)"><div class="nm">Ocean Summit</div><div class="fmt">3J / 2N · 100-200 pax</div><div class="amt">4 800</div><div class="unit">MAD / pax · réf.</div></div>
     </div>
 
-    <h3 class="day-title" style="margin-top:54px">Grille dégressive détaillée</h3>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--deep);margin-top:52px;margin-bottom:4px">Grille dégressive détaillée</h3>
     <table class="price-table">
-      <thead><tr><th>Offre</th><th>10-15 pax</th><th>16-30 pax</th><th>31-50 pax</th><th>51-80 pax</th></tr></thead>
+      <thead>
+        <tr><th>Offre</th><th>10-15 pax</th><th>16-30 pax</th><th>31-50 pax</th><th>51-80 pax</th><th>81-120 pax</th><th style="background:#1a5276">100-200 pax</th></tr>
+      </thead>
       <tbody>
-        <tr><td><b>🏝️ Koh-Bouznika</b></td><td class="price">8 200</td><td class="price">7 200</td><td class="price">6 500 <span class="ref-tag">RÉF</span></td><td class="price">5 900</td></tr>
-        <tr><td><b>🎒 Colo des Grands</b></td><td class="price">7 800</td><td class="price">6 900</td><td class="price">6 200 <span class="ref-tag">RÉF</span></td><td>—</td></tr>
-        <tr><td><b>🎶 Sound System</b></td><td>—</td><td class="price">9 500</td><td class="price">8 200 <span class="ref-tag">RÉF</span></td><td class="price">7 300</td></tr>
-        <tr><td><b>🇲🇦 Dar Dyalna</b></td><td class="price">8 600</td><td class="price">7 500</td><td class="price">6 800 <span class="ref-tag">RÉF</span></td><td>—</td></tr>
-        <tr><td><b>☀️ Good Vibes (2J/1N)</b></td><td class="price">5 200</td><td class="price">4 200 <span class="ref-tag">RÉF</span></td><td>—</td><td>—</td></tr>
+        <tr><td><b>🏝 Koh-Bouznika</b></td><td class="price">8 200</td><td class="price">7 200</td><td class="price">6 500 <span class="ref-tag">RÉF</span></td><td class="price">5 900</td><td class="price">5 400</td><td>—</td></tr>
+        <tr><td><b>🎒 Colo des Grands</b></td><td class="price">7 800</td><td class="price">6 900</td><td class="price">6 200 <span class="ref-tag">RÉF</span></td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td><b>🎶 Sound System</b></td><td>—</td><td class="price">9 500</td><td class="price">8 200 <span class="ref-tag">RÉF</span></td><td class="price">7 300</td><td class="price">6 800</td><td>—</td></tr>
+        <tr><td><b>🇲🇦 Dar Dyalna</b></td><td class="price">8 600</td><td class="price">7 500</td><td class="price">6 800 <span class="ref-tag">RÉF</span></td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td><b>☀️ Good Vibes (2J/1N)</b></td><td class="price">5 200</td><td class="price">4 200 <span class="ref-tag">RÉF</span></td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr class="grand-row"><td><b>🏟 Ocean Summit</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="price">5 200</td><td class="price" style="color:var(--grand)">4 800 <span class="ref-tag">RÉF</span></td></tr>
       </tbody>
     </table>
 
-    <h3 class="day-title" style="margin-top:48px">Suppléments & options</h3>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--deep);margin-top:48px;margin-bottom:4px">Suppléments & options</h3>
     <table class="options-table">
       <tr><td>Supplément chambre <b>single</b></td><td>+ 700 / nuit</td></tr>
       <tr><td><b>Golf 18 trous</b> (green fee + voiturette)</td><td>+ 900</td></tr>
       <tr><td>Transfert A/R Casablanca / Rabat (autocar)</td><td>+ 250</td></tr>
       <tr><td>Transfert aéroport CMN</td><td>+ 400</td></tr>
-      <tr><td>Vidéaste pro + clip <i>(inclus dans Sound System)</i></td><td>+ 180</td></tr>
+      <tr><td>Vidéaste pro + clip <em>(inclus dans Sound System)</em></td><td>+ 180</td></tr>
       <tr><td>Soin wellness premium additionnel (LPG / InBody+)</td><td>+ 350</td></tr>
       <tr><td>Journée supplémentaire (passage en 4J/3N)</td><td>+ 1 900 à 2 400</td></tr>
     </table>
 
     <div class="disclaimer">
-      ⚠️ <b>Chiffres indicatifs</b> calés sur le marché MICE marocain haut de gamme, à valider avec le contrôle de gestion (tarif chambre négocié, food cost réel, masse salariale). Composante séjour ≈ 5 300 MAD/pax (hébergement 2 nuits + pension complète + wellness + espaces), commune à toutes les offres 3J/2N. Marge brute estimée : 25 à 40 % selon l'offre.
+      ⚠ <b>Chiffres indicatifs</b> calés sur le marché MICE marocain haut de gamme, à valider avec le contrôle de gestion (tarif chambre négocié, food cost réel, masse salariale). Composante séjour ≈ 5 300 MAD/pax (hébergement 2 nuits + pension complète + wellness + espaces), commune à toutes les offres 3J/2N. Marge brute estimée : 25 à 40 % selon l'offre.
     </div>
   </div>
 </section>
@@ -714,18 +801,18 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
 <!-- ============ CONDITIONS ============ -->
 <section id="conditions">
   <div class="wrap">
-    <div class="section-tag">Conditions commerciales</div>
-    <h2 class="section-title">Cadre de vente recommandé</h2>
+    <div class="tag">Conditions commerciales</div>
+    <h2 class="s-title">Cadre de vente recommandé</h2>
     <div class="terms">
       <div class="term"><b>Acompte.</b> 40 % à la confirmation, solde à J-7.</div>
       <div class="term"><b>Gratuité.</b> 1 participant offert par tranche de 20 (place organisateur).</div>
       <div class="term"><b>Marge revendeur agences.</b> Intégrer 10-15 % dans une grille « net agence » dédiée.</div>
       <div class="term"><b>Jauge plancher.</b> Facturation minimum garantie sur 15 pax (16 pour Sound System).</div>
-      <div class="term"><b>Saisonnalité.</b> Grille haute saison +10-15 %, basse saison -10 % pour remplir les creux.</div>
-      <div class="term"><b>Matériel amorti.</b> Le kit branding + beach games (30-40 KMAD) s'amortit sur ~10 événements.</div>
+      <div class="term"><b>Saisonnalité.</b> Haute saison +10-15 %, basse saison -10 % pour remplir les creux.</div>
+      <div class="term"><b>Matériel amorti.</b> Kit branding + beach games (30-40 KMAD) amorti sur ~10 événements.</div>
     </div>
 
-    <h3 class="day-title" style="margin-top:48px">Trois discours, trois cibles</h3>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--deep);margin-top:48px;margin-bottom:24px">Trois discours, trois cibles</h3>
     <div class="bench-grid">
       <div class="bench-card">
         <h3 style="font-size:1.3rem">Entreprises directes</h3>
@@ -735,12 +822,12 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
       <div class="bench-card">
         <h3 style="font-size:1.3rem">Agences évènementielles</h3>
         <div class="role">Revendeurs</div>
-        <p>Flexibilité de bundling : 4 offres recombinables. Leur fournir un kit de vente (visuels, fiches, vidéo 60 s) avec marge intégrée.</p>
+        <p>Flexibilité de bundling : 6 offres recombinables. Leur fournir un kit de vente (visuels, fiches, vidéo 60 s) avec marge intégrée.</p>
       </div>
       <div class="bench-card">
         <h3 style="font-size:1.3rem">Agences de voyage</h3>
         <div class="role">Incentive · MICE</div>
-        <p>Différenciateur wellness médical + accessibilité CMN (45 min). Forfaits + transfert + soirées off-site pour étoffer leur marge.</p>
+        <p>Différenciateur wellness médicalisé + accessibilité CMN (45 min) + Chay Lounge comme expérience signature. Forfaits + transfert pour étoffer leur marge.</p>
       </div>
     </div>
   </div>
@@ -748,9 +835,9 @@ footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
 
 <footer>
   <div class="wrap">
-    <div class="brand">The View <span style="color:var(--gold)">Bouznika</span></div>
+    <div class="brand">The View <span style="color:var(--gold-soft)">Bouznika</span></div>
     <div class="sep"></div>
-    <p>Dossier commercial Team Building · EXPERIENCIAH · Préparé pour la Direction Marketing. Cinq expériences clés en main, du format court feel-good au grand jeu d'aventure, toutes ancrées dans l'ADN wellness et front de mer de l'hôtel.</p>
+    <p>Dossier commercial Team Building · EXPERIENCIAH · Six expériences clés en main, du format court feel-good au grand summit 200 participants, toutes ancrées dans l'ADN wellness 5★ et front de mer de l'hôtel.</p>
   </div>
 </footer>
 

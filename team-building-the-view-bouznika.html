@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Building — The View Bouznika</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ocean:#0d3b4f;
+  --ocean-deep:#072a3a;
+  --teal:#1c7293;
+  --sand:#f6efe4;
+  --cream:#fbf7f0;
+  --gold:#c9a25a;
+  --ink:#1d2b30;
+  --muted:#6b7b80;
+  --line:rgba(13,59,79,.12);
+
+  /* accents par offre */
+  --koh:#1f8a70;
+  --colo:#f08a3c;
+  --sound:#8e5bd1;
+  --dar:#c25a3c;
+  --vibes:#e0b13a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  font-family:'Manrope',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.12}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+
+/* ---------- NAV ---------- */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(7,42,58,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;letter-spacing:.5px;text-decoration:none}
+.brand span{color:var(--gold)}
+.navlinks{display:flex;gap:26px;list-style:none}
+.navlinks a{color:rgba(255,255,255,.78);text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.4px;text-transform:uppercase;transition:color .2s}
+.navlinks a:hover{color:var(--gold)}
+@media(max-width:860px){.navlinks{display:none}}
+
+/* ---------- HERO ---------- */
+header.hero{
+  position:relative;
+  min-height:92vh;
+  display:flex;align-items:center;
+  background:
+    linear-gradient(180deg,rgba(7,42,58,.55) 0%,rgba(7,42,58,.78) 100%),
+    radial-gradient(1200px 600px at 70% -10%,rgba(28,114,147,.6),transparent),
+    linear-gradient(135deg,#0d3b4f 0%,#1c7293 55%,#0d3b4f 100%);
+  color:#fff;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(2px 2px at 20% 30%,rgba(255,255,255,.5),transparent),
+    radial-gradient(2px 2px at 80% 20%,rgba(255,255,255,.3),transparent),
+    radial-gradient(1px 1px at 60% 70%,rgba(255,255,255,.4),transparent);
+  opacity:.4;
+}
+.hero .wrap{position:relative;z-index:2}
+.eyebrow{display:inline-block;font-size:.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:22px}
+.hero h1{font-size:clamp(2.8rem,7vw,5.6rem);font-weight:700;letter-spacing:-1px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p.lead{font-size:clamp(1.05rem,2.2vw,1.4rem);max-width:640px;margin-top:24px;color:rgba(255,255,255,.85);font-weight:300}
+.hero .meta{margin-top:38px;display:flex;gap:34px;flex-wrap:wrap}
+.hero .meta div{border-left:2px solid var(--gold);padding-left:14px}
+.hero .meta b{display:block;font-size:1.5rem;font-family:'Cormorant Garamond',serif}
+.hero .meta small{color:rgba(255,255,255,.7);font-size:.8rem;letter-spacing:1px;text-transform:uppercase}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.6);font-size:.75rem;letter-spacing:2px;z-index:2}
+
+/* ---------- SECTIONS ---------- */
+section{padding:88px 0}
+.section-tag{font-size:.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:14px}
+.section-title{font-size:clamp(2rem,4.5vw,3.2rem);color:var(--ocean);margin-bottom:18px}
+.section-intro{font-size:1.12rem;color:var(--muted);max-width:720px;font-weight:300}
+.alt{background:var(--sand)}
+
+/* ---------- BENCHMARK ---------- */
+.bench-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+@media(max-width:820px){.bench-grid{grid-template-columns:1fr}}
+.bench-card{background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line);box-shadow:0 10px 30px rgba(13,59,79,.05)}
+.bench-card h3{font-size:1.5rem;color:var(--ocean);margin-bottom:6px}
+.bench-card .role{font-size:.78rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);font-weight:700;margin-bottom:14px}
+.bench-card p{font-size:.95rem;color:var(--muted)}
+.bench-card .weak{margin-top:14px;font-size:.85rem;color:var(--ocean);background:var(--sand);border-radius:8px;padding:10px 12px}
+
+.opportunity{margin-top:48px;background:linear-gradient(135deg,var(--ocean),var(--teal));border-radius:20px;padding:42px;color:#fff}
+.opportunity h3{font-size:1.9rem;margin-bottom:24px;color:#fff}
+.opp-list{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:820px){.opp-list{grid-template-columns:1fr}}
+.opp-list .num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--gold);line-height:1}
+.opp-list p{color:rgba(255,255,255,.88);font-size:.95rem;margin-top:8px}
+
+/* ---------- OFFERS NAV ---------- */
+.offers-intro{text-align:center;max-width:760px;margin:0 auto}
+.offer-chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:38px}
+.offer-chips a{text-decoration:none;font-weight:700;font-size:.85rem;padding:10px 18px;border-radius:40px;color:#fff;transition:transform .15s,filter .15s}
+.offer-chips a:hover{transform:translateY(-2px);filter:brightness(1.08)}
+
+/* ---------- OFFER BLOCK ---------- */
+.offer{padding:80px 0;border-top:1px solid var(--line)}
+.offer-head{display:flex;align-items:flex-start;gap:24px;flex-wrap:wrap}
+.offer-badge{
+  flex-shrink:0;width:84px;height:84px;border-radius:22px;
+  display:flex;align-items:center;justify-content:center;font-size:2.4rem;
+  box-shadow:0 12px 28px rgba(0,0,0,.12);
+}
+.offer-head .titles{flex:1;min-width:260px}
+.offer-kicker{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:6px}
+.offer-head h2{font-size:clamp(2.1rem,4.5vw,3rem);color:var(--ocean);line-height:1.05}
+.offer-format{display:inline-block;margin-top:10px;font-size:.82rem;font-weight:700;letter-spacing:1px;padding:5px 14px;border-radius:30px;background:#fff;border:1px solid var(--line)}
+.offer-vibe{font-size:1.18rem;font-style:italic;font-family:'Cormorant Garamond',serif;color:var(--ink);margin-top:22px;max-width:760px}
+
+.offer-meta{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+@media(max-width:680px){.offer-meta{grid-template-columns:1fr}}
+.offer-meta .box{background:#fff;border-radius:14px;padding:18px 20px;border:1px solid var(--line)}
+.offer-meta .box .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;color:var(--muted);margin-bottom:6px}
+.offer-meta .box p{font-size:.96rem}
+
+/* timeline */
+.day-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--ocean);margin:42px 0 8px;display:flex;align-items:center;gap:12px}
+.day-title .dnum{font-size:.72rem;font-family:'Manrope';letter-spacing:1.5px;text-transform:uppercase;font-weight:800;color:#fff;padding:5px 12px;border-radius:30px}
+.timeline{margin-top:10px;border-left:2px solid var(--line);padding-left:0}
+.tl-row{display:grid;grid-template-columns:88px 1fr;gap:0;position:relative}
+.tl-row .time{font-weight:800;font-size:.9rem;color:var(--ocean);padding:12px 16px 12px 22px;position:relative}
+.tl-row .time::before{content:"";position:absolute;left:-7px;top:18px;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid var(--teal)}
+.tl-row .act{padding:12px 0 12px 8px;border-bottom:1px dashed var(--line);font-size:.96rem}
+.tl-row:last-child .act{border-bottom:none}
+.tl-row .act b{color:var(--ocean)}
+
+/* twist */
+.twist{margin-top:34px;border-radius:16px;padding:26px 28px;color:#fff;position:relative;overflow:hidden}
+.twist .tl-tag{font-size:.74rem;letter-spacing:2px;text-transform:uppercase;font-weight:800;opacity:.85}
+.twist p{font-size:1.12rem;font-family:'Cormorant Garamond',serif;font-style:italic;margin-top:6px;line-height:1.4}
+
+/* logistics */
+.logi{margin-top:36px;background:#fff;border-radius:18px;border:1px solid var(--line);overflow:hidden}
+.logi-head{padding:18px 26px;font-weight:800;letter-spacing:1px;text-transform:uppercase;font-size:.8rem;color:#fff;display:flex;align-items:center;gap:10px}
+.logi-body{padding:26px}
+.logi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:820px){.logi-grid{grid-template-columns:1fr}}
+.logi-col h4{font-size:1.15rem;color:var(--ocean);margin-bottom:10px}
+.logi-col ul{list-style:none}
+.logi-col li{font-size:.9rem;color:var(--muted);padding:5px 0 5px 18px;position:relative}
+.logi-col li::before{content:"›";position:absolute;left:0;color:var(--gold);font-weight:800}
+.logi-foot{margin-top:22px;display:flex;gap:22px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:18px}
+.logi-foot .stat b{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--ocean);display:block}
+.logi-foot .stat small{font-size:.74rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
+
+/* ---------- PRICING ---------- */
+.price-table{width:100%;border-collapse:collapse;margin-top:30px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(13,59,79,.06)}
+.price-table th,.price-table td{padding:14px 18px;text-align:left;font-size:.92rem;border-bottom:1px solid var(--line)}
+.price-table th{background:var(--ocean);color:#fff;font-size:.76rem;letter-spacing:1px;text-transform:uppercase}
+.price-table td.price{font-weight:800;color:var(--ocean);font-size:1rem}
+.price-table tr.ref td{background:var(--sand)}
+.price-table .ref-tag{font-size:.66rem;background:var(--gold);color:#fff;padding:2px 8px;border-radius:20px;margin-left:8px;font-weight:800;letter-spacing:.5px}
+.price-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:30px}
+@media(max-width:920px){.price-cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.price-cards{grid-template-columns:1fr}}
+.price-card{border-radius:14px;padding:20px;color:#fff;text-align:center}
+.price-card .nm{font-weight:800;font-size:.92rem;letter-spacing:.5px}
+.price-card .fmt{font-size:.74rem;opacity:.85;margin:4px 0 12px}
+.price-card .amt{font-family:'Cormorant Garamond',serif;font-size:2.2rem;line-height:1}
+.price-card .unit{font-size:.72rem;opacity:.85}
+
+.options-table{width:100%;border-collapse:collapse;margin-top:26px;background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.options-table td{padding:12px 18px;border-bottom:1px solid var(--line);font-size:.92rem}
+.options-table td:last-child{text-align:right;font-weight:800;color:var(--ocean)}
+
+.terms{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+@media(max-width:680px){.terms{grid-template-columns:1fr}}
+.term{background:#fff;border-radius:12px;padding:18px 20px;border:1px solid var(--line);border-left:4px solid var(--gold)}
+.term b{color:var(--ocean)}
+.disclaimer{margin-top:26px;font-size:.85rem;color:var(--muted);background:#fff;border:1px dashed var(--line);border-radius:12px;padding:16px 20px}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--ocean-deep);color:rgba(255,255,255,.8);padding:60px 0 40px;text-align:center}
+footer .brand{font-size:1.8rem;display:inline-block;margin-bottom:14px}
+footer p{font-size:.9rem;max-width:560px;margin:0 auto;color:rgba(255,255,255,.6)}
+footer .sep{width:50px;height:2px;background:var(--gold);margin:24px auto}
+
+/* utility */
+.pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.pill{font-size:.76rem;font-weight:700;padding:5px 12px;border-radius:30px;background:#fff;border:1px solid var(--line);color:var(--ocean)}
+@media print{nav,.scroll-hint{display:none}.offer,section{page-break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="brand">The View <span>Bouznika</span></a>
+    <ul class="navlinks">
+      <li><a href="#benchmark">Benchmark</a></li>
+      <li><a href="#offres">Les Offres</a></li>
+      <li><a href="#tarifs">Tarifs</a></li>
+      <li><a href="#conditions">Conditions</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Dossier Commercial · Team Building</span>
+    <h1>Vivez la <em>cohésion</em><br>face à l'océan</h1>
+    <p class="lead">Cinq expériences team building signées The View Bouznika — entre wellness mesurable, gastronomie et grand air, à 40 minutes de Casablanca et Rabat.</p>
+    <div class="meta">
+      <div><b>5</b><small>Offres clés en main</small></div>
+      <div><b>3 J / 2 N</b><small>Format standard</small></div>
+      <div><b>15 → 80</b><small>Participants</small></div>
+      <div><b>40 min</b><small>de Casa & Rabat</small></div>
+    </div>
+  </div>
+  <div class="scroll-hint">— défiler —</div>
+</header>
+
+<!-- CONTEXTE -->
+<section id="contexte">
+  <div class="wrap">
+    <div class="section-tag">Le positionnement</div>
+    <h2 class="section-title">Un seul lieu, mille façons de souder une équipe</h2>
+    <p class="section-intro">The View Bouznika réunit ce qu'aucun concurrent ne combine sur la côte : un <b>wellness médicalisé</b> (InBody, LPG, hammams, bains hydromassants), un <b>front de mer</b> avec golf adjacent et chapiteau, <b>trois restaurants</b> thématisés, le tout sur un site compact entre les deux capitales économiques. Ces cinq offres transforment ces atouts en expériences mémorables.</p>
+    <div class="pillrow" style="margin-top:24px">
+      <span class="pill">🌊 Front de mer</span>
+      <span class="pill">💪 Wellness médicalisé</span>
+      <span class="pill">⛳ Golf adjacent</span>
+      <span class="pill">🍽️ 3 restaurants</span>
+      <span class="pill">⛺ Chapiteau & salles</span>
+      <span class="pill">🏊 2 piscines</span>
+    </div>
+  </div>
+</section>
+
+<!-- BENCHMARK -->
+<section id="benchmark" class="alt">
+  <div class="wrap">
+    <div class="section-tag">Analyse de marché</div>
+    <h2 class="section-title">Ce que propose la concurrence</h2>
+    <p class="section-intro">Trois familles d'acteurs se partagent le marché du team building haut de gamme au Maroc. Chacune laisse un angle mort que The View peut occuper.</p>
+
+    <div class="bench-grid">
+      <div class="bench-card">
+        <h3>Mazagan Beach Resort</h3>
+        <div class="role">El Jadida · MICE intégré</div>
+        <p>250 ha, 7 km de plage, golf 18 trous. Argument : « un seul lieu, tous les formats ». Olympiades, équitation, quad, ateliers culinaires.</p>
+        <div class="weak"><b>Faille :</b> trop vaste donc peu intime, et le wellness n'est pas central.</div>
+      </div>
+      <div class="bench-card">
+        <h3>Conrad Rabat Arzana</h3>
+        <div class="role">Plage des Nations · Premium feutré</div>
+        <p>Positionnement « haven away from the hustle » : gastronomie, spa, banquets. Team building peu structuré côté offres packagées.</p>
+        <div class="weak"><b>Faille :</b> s'appuie sur l'événementiel et la table, pas sur des programmes thématisés.</div>
+      </div>
+      <div class="bench-card">
+        <h3>Agences spécialisées</h3>
+        <div class="role">Red Rock · Morocco Retreats</div>
+        <p>Formats packagés à thématique RH claire : outdoor, escape games, RSE, ateliers culturels, sport-aventure.</p>
+        <div class="weak"><b>Faille :</b> aucun lieu propre — ils dépendent des hôtels comme le vôtre.</div>
+      </div>
+    </div>
+
+    <div class="opportunity">
+      <h3>Votre boulevard stratégique</h3>
+      <div class="opp-list">
+        <div>
+          <div class="num">01</div>
+          <p><b>Wellness mesurable.</b> InBody, LPG, programmes detox/vitalité intégrés au team building. Personne ne l'a sur la côte.</p>
+        </div>
+        <div>
+          <div class="num">02</div>
+          <p><b>Site compact & complet.</b> Front de mer + golf + chapiteau + 3 restaurants réunis, à l'inverse de Mazagan dispersé sur 250 ha.</p>
+        </div>
+        <div>
+          <div class="num">03</div>
+          <p><b>Proximité imbattable.</b> 40 min de Casablanca comme de Rabat — idéal pour les séminaires courts.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFRES INTRO -->
+<section id="offres">
+  <div class="wrap offers-intro">
+    <div class="section-tag" style="text-align:center">Les expériences</div>
+    <h2 class="section-title">Cinq univers, une même promesse</h2>
+    <p class="section-intro" style="margin:0 auto">Des programmes pensés comme des histoires à vivre, pas des plannings à subir. Chaque participant repart avec un souvenir tangible et l'envie de revenir.</p>
+    <div class="offer-chips">
+      <a href="#koh" style="background:var(--koh)">🏝️ Koh-Bouznika</a>
+      <a href="#colo" style="background:var(--colo)">🎒 La Colo des Grands</a>
+      <a href="#sound" style="background:var(--sound)">🎶 Sound System</a>
+      <a href="#dar" style="background:var(--dar)">🇲🇦 Dar Dyalna</a>
+      <a href="#vibes" style="background:var(--vibes)">☀️ Good Vibes Only</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFFRE A : KOH-BOUZNIKA ============ -->
+<div class="offer alt" id="koh">
+  <div class="wrap">
+    <div class="offer-head">
+      <div class="offer-badge" style="background:var(--koh);color:#fff">🏝️</div>
+      <div class="titles">
+        <div class="offer-kicker" style="color:var(--koh)">Offre A · Aventure</div>
+        <h2>Koh-Bouznika</h2>
+        <div class="offer-format">3 Jours / 2 Nuits · 30 à 80 pax</div>
+      </div>
+    </div>
+    <p class="offer-vibe">« Un Koh-Lanta version bord de mer — plus glamour, moins boueux. Tribus, totems, immunités, alliances secrètes… et le confort 4 étoiles le soir. »</p>
+    <div class="offer-meta">
+      <div class="box"><div class="lbl">Cible</div><p>Équipes commerciales, start-ups, agences en quête de fun et de compétition saine.</p></div>
+      <div class="box"><div class="lbl">Fil rouge</div><p>Le groupe est divisé en tribus (Mer, Vent, Sable, Soleil) — classement et rebondissements sur 3 jours.</p></div>
+    </div>
+
+    <div class="day-title"><span class="dnum" style="background:var(--koh)">Jour 1</span> Naufragés en terre inconnue</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="time">10h30</div><div class="act">Arrivée, welcome juice au chiringuito, remise des room-keys</div></div>
+      <div class="tl-row"><div class="time">11h00</div><div class="act"><b>Cérémonie d'ouverture :</b> règles du jeu, tirage des tribus, distribution des bandanas</div></div>
+      <div class="tl-row"><div class="time">11h30</div><div class="act"><b>Atelier Totem :</b> totem en bois flotté, drapeau et cri de guerre sur la plage</div></div>
+      <div class="tl-row"><div class="time">13h00</div><div class="act">Déjeuner « naufragés » au chiringuito, pieds dans le sable</div></div>
+      <div class="tl-row"><div class="time">14h30</div><div class="act"><b>Épreuve 1 — Orientation :</b> parcours sur le domaine + golf, balises à énigmes</div></div>
+      <div class="tl-row"><div class="time">16h30</div><div class="act">Pause + 1ère rotation wellness (tribu en tête = hammam prioritaire)</div></div>
+      <div class="tl-row"><div class="time">19h30</div><div class="act">Apéro coucher de soleil</div></div>
+      <div class="tl-row"><div class="time">20h00</div><div class="act"><b>Dîner « Survivor BBQ »</b> autour du feu</div></div>
+      <div class="tl-row"><div class="time">21h30</div><div class="act"><b>1er Conseil de tribu :</b> débrief, stratégie, annonce du classement</div></div>
+    </div>
+
+    <div class="day-title"><span class="dnum" style="background:var(--koh)">Jour 2</span> Les grandes épreuves</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="time">7h30</div><div class="act">Réveil musculaire face mer (option)</div></div>
+      <div class="tl-row"><div class="time">8h00</div><div class="act">Petit-déjeuner</div></div>
+      <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Épreuve 2 — Parcours d'aventure :</b> équilibre dans l'eau, parcours du combattant, puzzle géant, tir à l'arc</div></div>
+      <div class="tl-row"><div class="time">12h00</div><div class="act"><b>Épreuve de confort :</b> la tribu gagnante remporte l'accès VIP wellness</div></div>
+      <div class="tl-row"><div class="time">13h00</div><div class="act">Déjeuner méditerranéen</div></div>
+      <div class="tl-row"><div class="time">14h30</div><div class="act"><b>Rotation parallèle :</b> wellness (hammam / bain hydromassant / douche à jet) ↔ beach games + golf</div></div>
+      <div class="tl-row"><div class="time">16h30</div><div class="act"><b>Épreuve 3 — Dégustation à l'aveugle</b> (épices, miels, huiles)</div></div>
+      <div class="tl-row"><div class="time">20h00</div><div class="act">Dîner italien sous le chapiteau</div></div>
+      <div class="tl-row"><div class="time">21h30</div><div class="act"><b>Grand Conseil dramatique :</b> torches, « élimination » symbolique</div></div>
+    </div>
+
+    <div class="day-title"><span class="dnum" style="background:var(--koh)">Jour 3</span> La finale & les poteaux</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="time">8h00</div><div class="act">Petit-déjeuner</div></div>
+      <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Épreuve mythique des poteaux :</b> équilibre sur la plage</div></div>
+      <div class="tl-row"><div class="time">11h00</div><div class="act"><b>Orientation finale</b> pour le collier d'immunité</div></div>
+      <div class="tl-row"><div class="time">12h00</div><div class="act"><b>Grand vote final</b> + couronnement, remise du trophée</div></div>
+      <div class="tl-row"><div class="time">13h00</div><div class="act"><b>Brunch des vainqueurs</b> au bord de la piscine</div></div>
+      <div class="tl-row"><div class="time">14h30</div><div class="act">Photo de groupe avec totems, départ</div></div>
+    </div>
+
+    <div class="twist" style="background:linear-gradient(135deg,var(--koh),#0f5c49)">
+      <div class="tl-tag">Le twist qui change tout</div>
+      <p>Le collier d'immunité ne sauve pas du jeu : il offre un soin wellness premium. Le spa devient une récompense désirée, pas une option oubliée.</p>
+    </div>
+
+    <div class="logi">
+      <div class="logi-head" style="background:var(--koh)">⚙️ Fiche logistique</div>
+      <div class="logi-body">
+        <div class="logi-grid">
+          <div class="logi-col"><h4>Espaces</h4><ul><li>Plage (épreuves)</li><li>Golf adjacent</li><li>Chiringuito + feu de camp</li><li>Hammam / bains</li><li>Chapiteau (J2 + conseils)</li></ul></div>
+          <div class="logi-col"><h4>Matériel à acquérir</h4><ul><li>Kit tir à l'arc + cibles</li><li>Slackline / poteaux d'équilibre</li><li>Cordages + balises</li><li>Bandanas 4 couleurs</li><li>Torches de conseil (LED)</li></ul></div>
+          <div class="logi-col"><h4>Prestataires</h4><ul><li>1 maître de jeu (clé)</li><li>1 coach sécurité</li><li>Agents spa (rotations)</li><li>Surveillant baignade</li></ul></div>
+        </div>
+        <div class="logi-foot">
+          <div class="stat"><b>1 / 15</b><small>Animateur / pax</small></div>
+          <div class="stat"><b>5-6</b><small>Encadrants (60 pax)</small></div>
+          <div class="stat"><b>30-80</b><small>Jauge</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ OFFRE B : LA COLO DES GRANDS ============ -->
+<div class="offer" id="colo">
+  <div class="wrap">
+    <div class="offer-head">
+      <div class="offer-badge" style="background:var(--colo);color:#fff">🎒</div>
+      <div class="titles">
+        <div class="offer-kicker" style="color:var(--colo)">Offre B · Nostalgie</div>
+        <h2>La Colo des Grands</h2>
+        <div class="offer-format">3 Jours / 2 Nuits · 30 à 50 pax</div>
+      </div>
+    </div>
+    <p class="offer-vibe">« La colonie de vacances qu'on aurait tous voulu avoir, version adulte. Nostalgie, rires, lâcher-prise total — l'offre qui crée le plus de complicité. »</p>
+    <div class="offer-meta">
+      <div class="box"><div class="lbl">Cible</div><p>Équipes qui se connaissent peu, fusion d'équipes, intégration de nouveaux arrivants.</p></div>
+      <div class="box"><div class="lbl">Fil rouge</div><p>Badges, carnet de colo, chefs de chambrée, boum du dernier soir. Tout le monde redevient gamin.</p></div>
+    </div>
+
+    <div class="day-title"><span class="dnum" style="background:var(--colo)">Jour 1</span> Jour de rentrée</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="time">11h00</div><div class="act">Arrivée, <b>distribution des kits de colo</b> (casquette, badge, carnet, gourde)</div></div>
+      <div class="tl-row"><div class="time">11h30</div><div class="act">Constitution des chambrées + élection des chefs de chambrée</div></div>
+      <div class="tl-row"><div class="time">12h00</div><div class="act"><b>Grand jeu de piste de bienvenue</b> à la découverte du camp</div></div>
+      <div class="tl-row"><div class="time">13h00</div><div class="act">Déjeuner convivial grandes tablées</div></div>
+      <div class="tl-row"><div class="time">14h30</div><div class="act"><b>Goûter à l'ancienne :</b> crêpes & chocolat chaud au chiringuito</div></div>
+      <div class="tl-row"><div class="time">15h00</div><div class="act">Ateliers tournants : accrobranche soft / beach games / blason de chambrée</div></div>
+      <div class="tl-row"><div class="time">19h30</div><div class="act">Dîner</div></div>
+      <div class="tl-row"><div class="time">21h00</div><div class="act"><b>Veillée talents :</b> sketch / chanson par chambrée</div></div>
+      <div class="tl-row"><div class="time">22h00</div><div class="act">Chamallows grillés au feu de camp</div></div>
+    </div>
+
+    <div class="day-title"><span class="dnum" style="background:var(--colo)">Jour 2</span> La grande journée jeux</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="time">8h00</div><div class="act">Petit-déjeuner</div></div>
+      <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Olympiades rétro</b> sur la plage : course en sac, tir à la corde, relais à 3 jambes, course à l'œuf</div></div>
+      <div class="tl-row"><div class="time">12h00</div><div class="act"><b>Grande bataille d'eau</b> encadrée à la piscine</div></div>
+      <div class="tl-row"><div class="time">13h00</div><div class="act">Déjeuner</div></div>
+      <div class="tl-row"><div class="time">14h30</div><div class="act">Ateliers détente : bracelets brésiliens, photo polaroid, rotation wellness</div></div>
+      <div class="tl-row"><div class="time">18h00</div><div class="act">Préparation des costumes de la boum</div></div>
+      <div class="tl-row"><div class="time">20h00</div><div class="act">Dîner</div></div>
+      <div class="tl-row"><div class="time">21h30</div><div class="act"><b>LA GRANDE BOUM</b> déguisée (thème années 90), DJ</div></div>
+    </div>
+
+    <div class="day-title"><span class="dnum" style="background:var(--colo)">Jour 3</span> Dernier jour avant les vacances</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="time">8h00</div><div class="act">Petit-déjeuner</div></div>
+      <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Réveil yoga doux</b> sur la plage</div></div>
+      <div class="tl-row"><div class="time">10h30</div><div class="act"><b>Réveille-méninges :</b> grand quiz sur l'équipe et l'entreprise</div></div>
+      <div class="tl-row"><div class="time">11h30</div><div class="act"><b>Remise des diplômes de fin de colo</b> + derniers mots dans les carnets</div></div>
+      <div class="tl-row"><div class="time">13h00</div><div class="act">Brunch de départ</div></div>
+      <div class="tl-row"><div class="time">14h30</div><div class="act">Départ — chacun repart avec son carnet de colo rempli</div></div>
+    </div>
+
+    <div class="twist" style="background:linear-gradient(135deg,var(--colo),#c9621f)">
+      <div class="tl-tag">Le twist qui change tout</div>
+      <p>Le carnet de colo rempli — mots des collègues, polaroids, best-of des bêtises. Un souvenir émotionnel surpuissant, à coût quasi nul.</p>
+    </div>
+
+    <div class="logi">
+      <div class="logi-head" style="background:var(--colo)">⚙️ Fiche logistique</div>
+      <div class="logi-body">
+        <div class="logi-grid">
+          <div class="logi-col"><h4>Espaces</h4><ul><li>Plage (olympiades)</li><li>Piscine (bataille d'eau)</li><li>Chapiteau (boum + veillée)</li><li>Chiringuito (goûter)</li></ul></div>
+          <div class="logi-col"><h4>Matériel à acquérir</h4><ul><li>Kits colo (casquettes, badges, carnets)</li><li>Matériel olympiades rétro</li><li>Crêpière + chamallows</li><li>Polaroids + pellicules</li><li>Déco « boum 90s »</li></ul></div>
+          <div class="logi-col"><h4>Prestataires</h4><ul><li>1 DJ (boum)</li><li>1 prof de yoga</li><li>Moniteurs costumés</li></ul></div>
+        </div>
+        <div class="logi-foot">
+          <div class="stat"><b>1 / 12</b><small>Moniteur / pax</small></div>
+          <div class="stat"><b>3-4</b><small>Moniteurs (40 pax)</small></div>
+          <div class="stat"><b>30-50</b><small>Jauge</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ OFFRE C : SOUND SYSTEM ============ -->
+<div class="offer alt" id="sound">
+  <div class="wrap">
+    <div class="offer-head">
+      <div class="offer-badge" style="background:var(--sound);color:#fff">🎶</div>
+      <div class="titles">
+        <div class="offer-kicker" style="color:var(--sound)">Offre C · Festival</div>
+        <h2>Bouznika Sound System</h2>
+        <div class="offer-format">3 Jours / 2 Nuits · 40 à 80 pax</div>
+      </div>
+    </div>
+    <p class="offer-vibe">« Coachella au bord de l'Atlantique. Musique, création, énergie collective — et un contenu ultra-instagrammable pour les marques qui veulent rayonner. »</p>
+    <div class="offer-meta">
+      <div class="box"><div class="lbl">Cible</div><p>Équipes créatives, marketing, agences évènementielles, entreprises tech / com / média.</p></div>
+      <div class="box"><div class="lbl">Fil rouge</div><p>Chaque équipe est un groupe de musique : nom, logo, hymne — et la scène le dernier soir.</p></div>
+    </div>
+
+    <div class="day-title"><span class="dnum" style="background:var(--sound)">Jour 1</span> Le line-up</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="time">11h00</div><div class="act">Arrivée, <b>bracelet festival</b> + welcome drink</div></div>
+      <div class="tl-row"><div class="time">11h30</div><div class="act">Formation des groupes, brief de la mission finale</div></div>
+      <div class="tl-row"><div class="time">12h00</div><div class="act"><b>Atelier identité :</b> nom, logo peint sur bannière, premiers riffs</div></div>
+      <div class="tl-row"><div class="time">13h00</div><div class="act">Déjeuner « food-truck festival »</div></div>
+      <div class="tl-row"><div class="time">14h30</div><div class="act"><b>Initiation percussions</b> & atelier rythme collectif</div></div>
+      <div class="tl-row"><div class="time">16h30</div><div class="act">Rotation wellness (« loge des artistes » : hammam / douche à jet)</div></div>
+      <div class="tl-row"><div class="time">20h00</div><div class="act">Dîner</div></div>
+      <div class="tl-row"><div class="time">21h30</div><div class="act"><b>Silent disco</b> sur la plage — zéro nuisance pour le golf et le voisinage</div></div>
+    </div>
+
+    <div class="day-title"><span class="dnum" style="background:var(--sound)">Jour 2</span> En studio & sur scène</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="time">8h00</div><div class="act">Petit-déjeuner</div></div>
+      <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Atelier songwriting</b> avec coach musical : un tube célèbre aux couleurs de l'entreprise</div></div>
+      <div class="tl-row"><div class="time">11h30</div><div class="act">Atelier chorégraphie & mise en scène</div></div>
+      <div class="tl-row"><div class="time">13h00</div><div class="act">Déjeuner</div></div>
+      <div class="tl-row"><div class="time">14h30</div><div class="act"><b>Répétitions</b> par groupes + rotation wellness en parallèle</div></div>
+      <div class="tl-row"><div class="time">16h30</div><div class="act">Atelier déco de scène / accessoires</div></div>
+      <div class="tl-row"><div class="time">20h00</div><div class="act"><b>Dîner italien « backstage »</b></div></div>
+      <div class="tl-row"><div class="time">21h30</div><div class="act"><b>Blind-test géant</b> + battle de karaoké</div></div>
+    </div>
+
+    <div class="day-title"><span class="dnum" style="background:var(--sound)">Jour 3</span> Le grand concert</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="time">8h00</div><div class="act">Petit-déjeuner</div></div>
+      <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Balance</b> / dernières répétitions sur la scène</div></div>
+      <div class="tl-row"><div class="time">12h00</div><div class="act">Déjeuner léger</div></div>
+      <div class="tl-row"><div class="time">14h00</div><div class="act"><b>LE GRAND CONCERT :</b> chaque groupe joue son hymne devant le jury, captation pro</div></div>
+      <div class="tl-row"><div class="time">15h30</div><div class="act"><b>Remise des « disques d'or »</b> + photo de groupe</div></div>
+      <div class="tl-row"><div class="time">16h00</div><div class="act">Pot de clôture, départ (clip vidéo envoyé après)</div></div>
+    </div>
+
+    <div class="twist" style="background:linear-gradient(135deg,var(--sound),#5e35a8)">
+      <div class="tl-tag">Le twist qui change tout</div>
+      <p>Captation pro de chaque performance, montée en clip vidéo remis à l'entreprise. Souvenir viral pour le client — et contenu en or pour vendre l'offre suivante.</p>
+    </div>
+
+    <div class="logi">
+      <div class="logi-head" style="background:var(--sound)">⚙️ Fiche logistique</div>
+      <div class="logi-body">
+        <div class="logi-grid">
+          <div class="logi-col"><h4>Espaces</h4><ul><li>Plage (silent disco)</li><li>Chapiteau / plage (scène)</li><li>Salles de réunion (ateliers)</li><li>Hammam (« loge »)</li></ul></div>
+          <div class="logi-col"><h4>Matériel & location</h4><ul><li>Système silent disco (casques 3 canaux)</li><li>Scène + sono pro + éclairage</li><li>Captation vidéo pro</li><li>Lot de percussions</li><li>Bannières + peinture</li></ul></div>
+          <div class="logi-col"><h4>Prestataires</h4><ul><li>1 coach musical / DJ producteur (clé)</li><li>1 technicien son & lumière</li><li>1 vidéaste pro</li></ul></div>
+        </div>
+        <div class="logi-foot">
+          <div class="stat"><b>1 / 15</b><small>Animateur / pax</small></div>
+          <div class="stat"><b>16 min</b><small>Jauge plancher (rentabilité)</small></div>
+          <div class="stat"><b>40-80</b><small>Jauge optimale</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ OFFRE D : DAR DYALNA ============ -->
+<div class="offer" id="dar">
+  <div class="wrap">
+    <div class="offer-head">
+      <div class="offer-badge" style="background:var(--dar);color:#fff">🇲🇦</div>
+      <div class="titles">
+        <div class="offer-kicker" style="color:var(--dar)">Offre D · Culture</div>
+        <h2>Dar Dyalna</h2>
+        <div class="offer-format">3 Jours / 2 Nuits · 30 à 50 pax</div>
+      </div>
+    </div>
+    <p class="offer-vibe">« La chaleur de la grande famille marocaine, l'art de recevoir, le partage. Élégante et authentique — parfaite pour les clients étrangers et les incentives. »</p>
+    <div class="offer-meta">
+      <div class="box"><div class="lbl">Cible</div><p>Agences de voyage, incentives internationaux, comités mixtes, clients « vrai Maroc » haut de gamme.</p></div>
+      <div class="box"><div class="lbl">Fil rouge</div><p>Le groupe devient une famille qui prépare ensemble une grande Dyafa (festin de fête) pour le dernier jour.</p></div>
+    </div>
+
+    <div class="day-title"><span class="dnum" style="background:var(--dar)">Jour 1</span> L'accueil à la marocaine</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="time">11h00</div><div class="act">Arrivée, <b>thé à la menthe & cornes de gazelle</b>, eau de fleur d'oranger</div></div>
+      <div class="tl-row"><div class="time">11h30</div><div class="act">Mot de bienvenue, constitution de la « grande famille »</div></div>
+      <div class="tl-row"><div class="time">12h00</div><div class="act"><b>Atelier « Souk » :</b> chasse aux ingrédients & épices dans le domaine</div></div>
+      <div class="tl-row"><div class="time">13h00</div><div class="act">Déjeuner méditerranéen du terroir</div></div>
+      <div class="tl-row"><div class="time">14h30</div><div class="act">Ateliers tournants : <b>henné & calligraphie</b> / wellness (hammam au savon noir)</div></div>
+      <div class="tl-row"><div class="time">20h00</div><div class="act"><b>Dîner du terroir</b> + conteur (halqa) au coin du feu</div></div>
+    </div>
+
+    <div class="day-title"><span class="dnum" style="background:var(--dar)">Jour 2</span> Les mains à la pâte</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="time">8h00</div><div class="act">Petit-déjeuner</div></div>
+      <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Grand atelier cuisine en brigades :</b> pastilla, tajine, pâtisserie (rotation wellness « détox » en parallèle)</div></div>
+      <div class="tl-row"><div class="time">12h30</div><div class="act"><b>Déjeuner = leurs créations</b>, jury croisé</div></div>
+      <div class="tl-row"><div class="time">14h30</div><div class="act">Atelier au choix : <b>zellige / poterie</b> ou <b>initiation Gnawa</b></div></div>
+      <div class="tl-row"><div class="time">16h30</div><div class="act">Temps libre piscine / hammam</div></div>
+      <div class="tl-row"><div class="time">20h00</div><div class="act"><b>Soirée lounge orientale</b> (musique live, derbouka)</div></div>
+    </div>
+
+    <div class="day-title"><span class="dnum" style="background:var(--dar)">Jour 3</span> La grande Dyafa</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="time">8h00</div><div class="act">Petit-déjeuner</div></div>
+      <div class="tl-row"><div class="time">9h30</div><div class="act"><b>Préparation collective de la Dyafa</b> + dressage des grandes tablées</div></div>
+      <div class="tl-row"><div class="time">11h30</div><div class="act"><b>Atelier carreau de zellige peint :</b> chacun y inscrit un mot / un engagement</div></div>
+      <div class="tl-row"><div class="time">12h30</div><div class="act"><b>LE GRAND DÉJEUNER DE FÊTE</b> partagé, musique live</div></div>
+      <div class="tl-row"><div class="time">14h00</div><div class="act"><b>Photo de famille</b> + remise des livrets de recettes</div></div>
+      <div class="tl-row"><div class="time">14h30</div><div class="act">Départ — avec son zellige + le livre de recettes de l'équipe</div></div>
+    </div>
+
+    <div class="twist" style="background:linear-gradient(135deg,var(--dar),#9e4128)">
+      <div class="tl-tag">Le twist qui change tout</div>
+      <p>Chacun repart avec un carreau de zellige peint à la main et le livre de recettes de l'équipe. Ancrage culturel rare — aucun concurrent corporate ne joue cette carte avec autant de soin.</p>
+    </div>
+
+    <div class="logi">
+      <div class="logi-head" style="background:var(--dar)">⚙️ Fiche logistique</div>
+      <div class="logi-body">
+        <div class="logi-grid">
+          <div class="logi-col"><h4>Espaces</h4><ul><li>Cuisines des restaurants</li><li>Salles / chapiteau (ateliers)</li><li>Hammam traditionnel</li><li>Extérieurs (Dyafa)</li></ul></div>
+          <div class="logi-col"><h4>Matériel à acquérir</h4><ul><li>Carreaux de zellige bruts + peintures</li><li>Tour de poterie / argile</li><li>Savon noir & gants kessa</li><li>Déco orientale (tapis, lanternes)</li></ul></div>
+          <div class="logi-col"><h4>Prestataires</h4><ul><li>Maâlem Gnawa + musiciens</li><li>1 conteur (halqa)</li><li>Artistes henné + calligraphe</li><li>Maître artisan zellige</li></ul></div>
+        </div>
+        <div class="logi-foot">
+          <div class="stat"><b>1 / 12</b><small>Animateur / pax</small></div>
+          <div class="stat"><b>1 / 8-10</b><small>Chef / cuisiniers amateurs</small></div>
+          <div class="stat"><b>30-50</b><small>Jauge</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ OFFRE E : GOOD VIBES ONLY ============ -->
+<div class="offer alt" id="vibes">
+  <div class="wrap">
+    <div class="offer-head">
+      <div class="offer-badge" style="background:var(--vibes);color:#fff">☀️</div>
+      <div class="titles">
+        <div class="offer-kicker" style="color:#b8901f">Offre E · Feel-good</div>
+        <h2>Good Vibes Only</h2>
+        <div class="offer-format">2 Jours / 1 Nuit · ≤ 25 pax · Format court</div>
+      </div>
+    </div>
+    <p class="offer-vibe">« Une parenthèse joyeuse et légère — rire, soleil, bien-être sans prise de tête. L'anti-séminaire stressant, et la porte d'entrée idéale pour faire goûter The View. »</p>
+    <div class="offer-meta">
+      <div class="box"><div class="lbl">Cible</div><p>Petites équipes (≤ 25), récompense de fin de trimestre, comités qui veulent souffler, week-ends.</p></div>
+      <div class="box"><div class="lbl">Fil rouge</div><p>Une seule règle : <i>Good Vibes Only</i>. Que du plaisir, zéro PowerPoint.</p></div>
+    </div>
+
+    <div class="day-title"><span class="dnum" style="background:var(--vibes)">Jour 1</span> Lâcher-prise</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="time">11h30</div><div class="act">Arrivée, <b>cocktail de bienvenue (mocktails)</b> au chiringuito face mer</div></div>
+      <div class="tl-row"><div class="time">12h00</div><div class="act">Mot d'accueil + règle unique : <i>Good Vibes Only</i></div></div>
+      <div class="tl-row"><div class="time">12h30</div><div class="act">Déjeuner détendu en terrasse</div></div>
+      <div class="tl-row"><div class="time">14h00</div><div class="act"><b>Séance de yoga du rire</b> (désarme tout le monde en 10 min)</div></div>
+      <div class="tl-row"><div class="time">15h00</div><div class="act"><b>Beach games décomplexés</b> (mölkky, pétanque, badminton, paddle)</div></div>
+      <div class="tl-row"><div class="time">16h30</div><div class="act"><b>Rotation wellness « bonheur »</b> + bain de soleil piscine</div></div>
+      <div class="tl-row"><div class="time">20h00</div><div class="act"><b>Dîner italien convivial</b></div></div>
+      <div class="tl-row"><div class="time">21h30</div><div class="act"><b>Blind-test / karaoké</b> sur la terrasse</div></div>
+    </div>
+
+    <div class="day-title"><span class="dnum" style="background:var(--vibes)">Jour 2</span> Recharge & sourire</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="time">8h00</div><div class="act">Réveil au choix : marche sur la plage, aquagym, ou grasse mat' assumée</div></div>
+      <div class="tl-row"><div class="time">9h00</div><div class="act">Petit-déjeuner</div></div>
+      <div class="tl-row"><div class="time">10h00</div><div class="act"><b>Atelier « cercle des compliments » :</b> chacun repart avec une carte de mots de ses collègues</div></div>
+      <div class="tl-row"><div class="time">11h00</div><div class="act">Temps libre piscine / dernier hammam</div></div>
+      <div class="tl-row"><div class="time">12h00</div><div class="act"><b>Brunch healthy & gourmand</b> au bord de la piscine</div></div>
+      <div class="tl-row"><div class="time">13h30</div><div class="act">Photo de groupe, départ recentrés</div></div>
+    </div>
+
+    <div class="twist" style="background:linear-gradient(135deg,var(--vibes),#c9961f)">
+      <div class="tl-tag">Le twist qui change tout</div>
+      <p>Court, abordable, émotionnellement marquant — la marge opérationnelle est élevée et les clients reviennent ensuite sur un format 3 jours. Le produit d'appel parfait.</p>
+    </div>
+
+    <div class="logi">
+      <div class="logi-head" style="background:var(--vibes)">⚙️ Fiche logistique</div>
+      <div class="logi-body">
+        <div class="logi-grid">
+          <div class="logi-col"><h4>Espaces</h4><ul><li>Chiringuito + terrasse</li><li>Plage</li><li>Piscine</li><li>Hammam / bains</li></ul></div>
+          <div class="logi-col"><h4>Matériel & location</h4><ul><li>Beach games (mölkky, pétanque, paddle)</li><li>Cartes « cercle des compliments »</li><li>Système karaoké + sono terrasse</li></ul></div>
+          <div class="logi-col"><h4>Prestataires</h4><ul><li>1 coach « yoga du rire » (signature)</li><li>1 animateur blind-test (interne possible)</li></ul></div>
+        </div>
+        <div class="logi-foot">
+          <div class="stat"><b>1 / 25</b><small>Animateur / pax</small></div>
+          <div class="stat"><b>2-3</b><small>Encadrants</small></div>
+          <div class="stat"><b>≤ 25</b><small>Jauge</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TARIFS ============ -->
+<section id="tarifs" class="alt">
+  <div class="wrap">
+    <div class="section-tag">Grille tarifaire</div>
+    <h2 class="section-title">Investissement par participant</h2>
+    <p class="section-intro">Prix indicatifs par personne, TTC, base chambre double. Dégressifs selon la taille du groupe — les prestataires et locations étant des coûts fixes par événement.</p>
+
+    <div class="price-cards">
+      <div class="price-card" style="background:var(--vibes)"><div class="nm">Good Vibes</div><div class="fmt">2J/1N</div><div class="amt">4 200</div><div class="unit">MAD / pax · réf.</div></div>
+      <div class="price-card" style="background:var(--colo)"><div class="nm">Colo des Grands</div><div class="fmt">3J/2N</div><div class="amt">6 200</div><div class="unit">MAD / pax · réf.</div></div>
+      <div class="price-card" style="background:var(--koh)"><div class="nm">Koh-Bouznika</div><div class="fmt">3J/2N</div><div class="amt">6 500</div><div class="unit">MAD / pax · réf.</div></div>
+      <div class="price-card" style="background:var(--dar)"><div class="nm">Dar Dyalna</div><div class="fmt">3J/2N</div><div class="amt">6 800</div><div class="unit">MAD / pax · réf.</div></div>
+      <div class="price-card" style="background:var(--sound)"><div class="nm">Sound System</div><div class="fmt">3J/2N</div><div class="amt">8 200</div><div class="unit">MAD / pax · réf.</div></div>
+    </div>
+
+    <h3 class="day-title" style="margin-top:54px">Grille dégressive détaillée</h3>
+    <table class="price-table">
+      <thead><tr><th>Offre</th><th>10-15 pax</th><th>16-30 pax</th><th>31-50 pax</th><th>51-80 pax</th></tr></thead>
+      <tbody>
+        <tr><td><b>🏝️ Koh-Bouznika</b></td><td class="price">8 200</td><td class="price">7 200</td><td class="price">6 500 <span class="ref-tag">RÉF</span></td><td class="price">5 900</td></tr>
+        <tr><td><b>🎒 Colo des Grands</b></td><td class="price">7 800</td><td class="price">6 900</td><td class="price">6 200 <span class="ref-tag">RÉF</span></td><td>—</td></tr>
+        <tr><td><b>🎶 Sound System</b></td><td>—</td><td class="price">9 500</td><td class="price">8 200 <span class="ref-tag">RÉF</span></td><td class="price">7 300</td></tr>
+        <tr><td><b>🇲🇦 Dar Dyalna</b></td><td class="price">8 600</td><td class="price">7 500</td><td class="price">6 800 <span class="ref-tag">RÉF</span></td><td>—</td></tr>
+        <tr><td><b>☀️ Good Vibes (2J/1N)</b></td><td class="price">5 200</td><td class="price">4 200 <span class="ref-tag">RÉF</span></td><td>—</td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="day-title" style="margin-top:48px">Suppléments & options</h3>
+    <table class="options-table">
+      <tr><td>Supplément chambre <b>single</b></td><td>+ 700 / nuit</td></tr>
+      <tr><td><b>Golf 18 trous</b> (green fee + voiturette)</td><td>+ 900</td></tr>
+      <tr><td>Transfert A/R Casablanca / Rabat (autocar)</td><td>+ 250</td></tr>
+      <tr><td>Transfert aéroport CMN</td><td>+ 400</td></tr>
+      <tr><td>Vidéaste pro + clip <i>(inclus dans Sound System)</i></td><td>+ 180</td></tr>
+      <tr><td>Soin wellness premium additionnel (LPG / InBody+)</td><td>+ 350</td></tr>
+      <tr><td>Journée supplémentaire (passage en 4J/3N)</td><td>+ 1 900 à 2 400</td></tr>
+    </table>
+
+    <div class="disclaimer">
+      ⚠️ <b>Chiffres indicatifs</b> calés sur le marché MICE marocain haut de gamme, à valider avec le contrôle de gestion (tarif chambre négocié, food cost réel, masse salariale). Composante séjour ≈ 5 300 MAD/pax (hébergement 2 nuits + pension complète + wellness + espaces), commune à toutes les offres 3J/2N. Marge brute estimée : 25 à 40 % selon l'offre.
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONDITIONS ============ -->
+<section id="conditions">
+  <div class="wrap">
+    <div class="section-tag">Conditions commerciales</div>
+    <h2 class="section-title">Cadre de vente recommandé</h2>
+    <div class="terms">
+      <div class="term"><b>Acompte.</b> 40 % à la confirmation, solde à J-7.</div>
+      <div class="term"><b>Gratuité.</b> 1 participant offert par tranche de 20 (place organisateur).</div>
+      <div class="term"><b>Marge revendeur agences.</b> Intégrer 10-15 % dans une grille « net agence » dédiée.</div>
+      <div class="term"><b>Jauge plancher.</b> Facturation minimum garantie sur 15 pax (16 pour Sound System).</div>
+      <div class="term"><b>Saisonnalité.</b> Grille haute saison +10-15 %, basse saison -10 % pour remplir les creux.</div>
+      <div class="term"><b>Matériel amorti.</b> Le kit branding + beach games (30-40 KMAD) s'amortit sur ~10 événements.</div>
+    </div>
+
+    <h3 class="day-title" style="margin-top:48px">Trois discours, trois cibles</h3>
+    <div class="bench-grid">
+      <div class="bench-card">
+        <h3 style="font-size:1.3rem">Entreprises directes</h3>
+        <div class="role">RH · DG · COMEX</div>
+        <p>ROI mesurable (InBody avant/après, carnet de route), proximité Casa-Rabat, garantie « vraie déconnexion » avec le wellness inscrit au planning.</p>
+      </div>
+      <div class="bench-card">
+        <h3 style="font-size:1.3rem">Agences évènementielles</h3>
+        <div class="role">Revendeurs</div>
+        <p>Flexibilité de bundling : 4 offres recombinables. Leur fournir un kit de vente (visuels, fiches, vidéo 60 s) avec marge intégrée.</p>
+      </div>
+      <div class="bench-card">
+        <h3 style="font-size:1.3rem">Agences de voyage</h3>
+        <div class="role">Incentive · MICE</div>
+        <p>Différenciateur wellness médical + accessibilité CMN (45 min). Forfaits + transfert + soirées off-site pour étoffer leur marge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">The View <span style="color:var(--gold)">Bouznika</span></div>
+    <div class="sep"></div>
+    <p>Dossier commercial Team Building · EXPERIENCIAH · Préparé pour la Direction Marketing. Cinq expériences clés en main, du format court feel-good au grand jeu d'aventure, toutes ancrées dans l'ADN wellness et front de mer de l'hôtel.</p>
+  </div>
+</footer>
+
+</body>
+</html>

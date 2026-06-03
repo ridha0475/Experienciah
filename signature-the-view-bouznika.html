@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collection Signature — The View Bouznika</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1b2327;
+  --deep:#14303a;
+  --deep2:#0c2128;
+  --ivory:#f8f4ec;
+  --cream:#fcfaf4;
+  --paper:#fffdf8;
+  --gold:#b8924f;
+  --gold-soft:#cda968;
+  --muted:#6e7a7e;
+  --line:rgba(20,48,58,.13);
+
+  --reset:#5b9279;
+  --drive:#d97b29;
+  --savor:#a8443a;
+  --horizon:#2f4858;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{font-family:'Jost',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.7;-webkit-font-smoothing:antialiased;font-weight:300}
+h1,h2,h3,h4,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.12}
+.wrap{max-width:1080px;margin:0 auto;padding:0 30px}
+em{font-family:'Cormorant Garamond',serif;font-style:italic}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(12,33,40,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(184,146,79,.25)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;letter-spacing:1px;text-decoration:none}
+.brand span{color:var(--gold-soft)}
+.navlinks{display:flex;gap:30px;list-style:none}
+.navlinks a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.74rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}
+.navlinks a:hover{color:var(--gold-soft)}
+@media(max-width:880px){.navlinks{display:none}}
+
+/* HERO */
+header.hero{position:relative;min-height:90vh;display:flex;align-items:center;color:#fff;overflow:hidden;
+  background:linear-gradient(180deg,rgba(8,25,31,.72),rgba(8,25,31,.86)),linear-gradient(135deg,#14303a,#1f4a52 60%,#0c2128);}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 500px at 75% 10%,rgba(184,146,79,.22),transparent)}
+.hero .wrap{position:relative;z-index:2}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.72rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold-soft);font-weight:600;margin-bottom:26px}
+.eyebrow::before,.eyebrow::after{content:"";width:34px;height:1px;background:var(--gold-soft);opacity:.6}
+.hero h1{font-size:clamp(2.9rem,7.5vw,5.8rem);font-weight:600;letter-spacing:-.5px}
+.hero h1 em{color:var(--gold-soft)}
+.hero p.lead{font-size:clamp(1.05rem,2vw,1.35rem);max-width:600px;margin-top:26px;color:rgba(255,255,255,.82);font-weight:300}
+.hero .meta{margin-top:42px;display:flex;gap:40px;flex-wrap:wrap}
+.hero .meta div b{display:block;font-size:1.8rem;font-family:'Cormorant Garamond',serif;color:var(--gold-soft)}
+.hero .meta div small{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6)}
+
+/* SECTION */
+section{padding:92px 0}
+.tag{font-size:.72rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px}
+.s-title{font-size:clamp(2rem,4.5vw,3.3rem);color:var(--deep);margin-bottom:18px}
+.s-intro{font-size:1.12rem;color:var(--muted);max-width:720px}
+.alt{background:var(--ivory)}
+
+/* SOCLE common */
+.socle-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:46px}
+@media(max-width:780px){.socle-grid{grid-template-columns:1fr}}
+.socle-card{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:30px;box-shadow:0 12px 30px rgba(20,48,58,.04)}
+.socle-card h3{font-size:1.5rem;color:var(--deep);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.meteo-table{width:100%;border-collapse:collapse;margin-top:8px}
+.meteo-table td{padding:8px 0;font-size:.9rem;border-bottom:1px solid var(--line)}
+.meteo-table td:first-child{color:var(--ink);font-weight:500}
+.meteo-table td:last-child{color:var(--muted);text-align:right}
+.socle-card p{font-size:.96rem;color:var(--muted)}
+.socle-card p b{color:var(--deep)}
+
+/* OFFER NAV */
+.coll-chips{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:40px}
+.coll-chips a{text-decoration:none;font-weight:600;font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;padding:13px 24px;border-radius:2px;color:#fff;transition:transform .15s,filter .15s}
+.coll-chips a:hover{transform:translateY(-2px);filter:brightness(1.07)}
+
+/* OFFER */
+.offer{padding:90px 0;border-top:1px solid var(--line);position:relative}
+.offer-index{font-family:'Cormorant Garamond',serif;font-size:clamp(5rem,14vw,11rem);font-weight:500;line-height:.7;opacity:.07;position:absolute;top:50px;right:30px;pointer-events:none}
+.offer-head{position:relative;z-index:2}
+.offer-kicker{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:10px}
+.offer-head h2{font-size:clamp(2.4rem,5.5vw,3.8rem);color:var(--deep);line-height:1}
+.offer-format{display:inline-block;margin-top:14px;font-size:.74rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:7px 16px;border:1px solid var(--line);border-radius:2px;color:var(--muted)}
+.offer-vibe{font-size:1.3rem;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink);margin-top:26px;max-width:740px;line-height:1.4}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
+@media(max-width:680px){.two-col{grid-template-columns:1fr}}
+.fact{background:var(--paper);border:1px solid var(--line);border-left-width:3px;padding:18px 22px;border-radius:2px}
+.fact .lbl{font-size:.68rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:6px}
+.fact p{font-size:.96rem}
+
+/* twist */
+.twist{margin-top:34px;border-radius:4px;padding:30px 34px;color:#fff;position:relative;overflow:hidden}
+.twist .tt{font-size:.7rem;letter-spacing:3px;text-transform:uppercase;font-weight:600;opacity:.9;margin-bottom:14px}
+.twist ul{list-style:none}
+.twist li{font-size:1.02rem;padding:7px 0 7px 26px;position:relative;color:rgba(255,255,255,.94)}
+.twist li::before{content:"✦";position:absolute;left:0;color:rgba(255,255,255,.7)}
+.twist li b{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:1.1rem}
+
+/* day timeline */
+.block-h{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--deep);margin:44px 0 14px;display:flex;align-items:center;gap:14px}
+.block-h .ic{width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:.95rem;font-family:'Jost'}
+.day-h{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--ink);margin:30px 0 6px;font-weight:600}
+.day-h .dn{font-family:'Jost';font-size:.66rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:#fff;padding:5px 11px;border-radius:2px;margin-right:12px;vertical-align:middle}
+.tl{border-left:1px solid var(--line);margin-left:4px}
+.tl-row{display:grid;grid-template-columns:80px 1fr}
+.tl-row .t{font-weight:600;font-size:.86rem;color:var(--deep);padding:11px 14px 11px 20px;position:relative}
+.tl-row .t::before{content:"";position:absolute;left:-4px;top:16px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.tl-row .a{padding:11px 0 11px 6px;border-bottom:1px solid var(--line);font-size:.94rem;color:var(--ink)}
+.tl-row:last-child .a{border-bottom:none}
+.tl-row .a b{font-weight:600}
+.note{font-size:.88rem;color:var(--muted);font-style:italic;margin-top:12px;padding-left:6px}
+
+/* logi / roi / argu */
+.panel{margin-top:18px;background:var(--paper);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.panel-h{padding:16px 26px;font-size:.74rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:#fff;display:flex;align-items:center;gap:10px}
+.panel-b{padding:26px}
+.logi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:780px){.logi-grid{grid-template-columns:1fr}}
+.logi-col h4{font-size:1.1rem;color:var(--deep);margin-bottom:8px}
+.logi-col ul{list-style:none}
+.logi-col li{font-size:.88rem;color:var(--muted);padding:4px 0 4px 16px;position:relative}
+.logi-col li::before{content:"–";position:absolute;left:0;color:var(--gold)}
+.stats{display:flex;gap:30px;flex-wrap:wrap;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.stats .st b{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--deep);display:block}
+.stats .st small{font-size:.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+@media(max-width:780px){.duo{grid-template-columns:1fr}}
+.mini{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:24px 26px}
+.mini .mh{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:var(--gold);margin-bottom:12px}
+.mini h4{font-size:1.25rem;color:var(--deep);margin-bottom:8px}
+.mini p{font-size:.92rem;color:var(--muted)}
+.mini .obj{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:.9rem}
+.mini .obj b{color:var(--deep)}
+.quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.12rem;color:var(--ink);line-height:1.4}
+.email-box{background:var(--deep);color:#fff;border-radius:4px;padding:24px 28px;margin-top:18px}
+.email-box .obj-line{color:var(--gold-soft);font-weight:600;font-size:.92rem;letter-spacing:.5px;margin-bottom:10px;font-family:'Jost'}
+.email-box p{font-size:.96rem;color:rgba(255,255,255,.85);font-weight:300}
+
+/* compare */
+.cmp-table{width:100%;border-collapse:collapse;margin-top:30px;background:var(--paper);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.cmp-table th,.cmp-table td{padding:15px 20px;text-align:left;font-size:.92rem;border-bottom:1px solid var(--line)}
+.cmp-table th{background:var(--deep);color:#fff;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:500}
+.cmp-table td:first-child{font-weight:600;color:var(--deep)}
+.cmp-table .before{color:var(--muted)}
+.cmp-table .after{color:var(--reset);font-weight:500}
+
+footer{background:var(--deep2);color:rgba(255,255,255,.78);padding:64px 0 44px;text-align:center}
+footer .brand{font-size:1.9rem;display:inline-block;margin-bottom:8px}
+footer .sep{width:54px;height:1px;background:var(--gold);margin:22px auto}
+footer p{font-size:.9rem;max-width:580px;margin:0 auto;color:rgba(255,255,255,.55);font-weight:300}
+
+@media print{nav{display:none}.offer,section{page-break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="brand">The View <span>Bouznika</span></a>
+    <ul class="navlinks">
+      <li><a href="#reset">Reset</a></li>
+      <li><a href="#drive">Drive</a></li>
+      <li><a href="#savor">Savor</a></li>
+      <li><a href="#horizon">Horizon</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Collection Signature</span>
+    <h1>Quatre séminaires<br><em>d'exception</em></h1>
+    <p class="lead">Détox, performance, gastronomie, stratégie. Quatre expériences premium où le wellness mesurable rencontre l'art de recevoir — face à l'océan, entre Casablanca et Rabat.</p>
+    <div class="meta">
+      <div><b>4</b><small>Offres signature</small></div>
+      <div><b>InBody</b><small>ROI mesuré</small></div>
+      <div><b>40 min</b><small>de Casa & Rabat</small></div>
+    </div>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section id="intro">
+  <div class="wrap">
+    <div class="tag">L'esprit de la collection</div>
+    <h2 class="s-title">Le seul resort de la côte qui mesure ce qu'il transforme</h2>
+    <p class="s-intro">Là où la concurrence vend l'échelle (Mazagan) ou la sobriété (Conrad), The View Bouznika vend la <em>transformation</em> — corporelle, collective, stratégique. Chaque offre de la Collection Signature s'appuie sur trois atouts uniques : un wellness médicalisé (InBody, LPG, hammams), un site compact front de mer avec golf adjacent, et une proximité imbattable des deux capitales économiques.</p>
+  </div>
+</section>
+
+<!-- SOCLE COMMUN -->
+<section class="alt" id="socle">
+  <div class="wrap">
+    <div class="tag">Le socle commun</div>
+    <h2 class="s-title">Trois garanties sur les quatre offres</h2>
+    <div class="socle-grid">
+      <div class="socle-card">
+        <h3>☀️ Planning soleil / vent</h3>
+        <p style="margin-bottom:14px">Bouznika peut être ventée hors saison. Chaque offre dispose d'un double planning, annoncé au client la veille à 18h.</p>
+        <table class="meteo-table">
+          <tr><td>Jeux & olympiades de plage</td><td>Chapiteau + salle de sport</td></tr>
+          <tr><td>Yoga / réveil sur le sable</td><td>Piscine intérieure chauffée</td></tr>
+          <tr><td>Dîner sur la plage</td><td>Chiringuito couvert / chapiteau</td></tr>
+          <tr><td>Course vélo corniche</td><td>Spinning en salle</td></tr>
+        </table>
+      </div>
+      <div class="socle-card">
+        <h3>🔄 Wellness en rotation</h3>
+        <p>La contrainte « le wellness ne se fait qu'en petit groupe » devient une force. Sous-groupes de <b>8 à 12 personnes</b>, <b>1 agent spa par poste</b>, créneaux de 15-20 min. Pendant qu'un groupe est en soin (InBody, LPG, hammam, bain hydromassant), les autres enchaînent une activité collective. Tout le monde passe partout sur la durée du séjour.</p>
+        <p style="margin-top:14px"><b>Le souvenir tangible :</b> chaque offre se termine par un objet que le participant emporte — la preuve physique que « ça a changé quelque chose ».</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTION NAV -->
+<section id="collection">
+  <div class="wrap" style="text-align:center">
+    <div class="tag" style="text-align:center">Les quatre expériences</div>
+    <h2 class="s-title">La Collection Signature</h2>
+    <p class="s-intro" style="margin:0 auto">Détaillées heure par heure, avec leur logique de ROI, leur fiche logistique et leur argumentaire de vente.</p>
+    <div class="coll-chips">
+      <a href="#reset" style="background:var(--reset)">Reset · Détox</a>
+      <a href="#drive" style="background:var(--drive)">Drive · Énergie</a>
+      <a href="#savor" style="background:var(--savor)">Savor · Gastronomie</a>
+      <a href="#horizon" style="background:var(--horizon)">Horizon · Stratégie</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESET ============ -->
+<div class="offer alt" id="reset">
+  <div class="wrap">
+    <div class="offer-index" style="color:var(--reset)">01</div>
+    <div class="offer-head">
+      <div class="offer-kicker" style="color:var(--reset)">Offre 01 · Détox & Reconnexion</div>
+      <h2>Reset</h2>
+      <div class="offer-format">3 Jours / 2 Nuits · 40-50 pax</div>
+      <p class="offer-vibe">« Revenir au bureau avec un corps allégé, une tête claire et une équipe ressoudée — et la donnée santé pour le prouver. »</p>
+    </div>
+
+    <div class="two-col">
+      <div class="fact" style="border-left-color:var(--reset)"><div class="lbl">Cible</div><p>Comités de direction, équipes en surcharge, post-clôture annuelle, agences cherchant un format « premium care ».</p></div>
+      <div class="fact" style="border-left-color:var(--reset)"><div class="lbl">Promesse mesurable</div><p>Bilan InBody d'entrée et de sortie remis à chaque participant. Le ROI corporel, noir sur blanc.</p></div>
+    </div>
+
+    <div class="twist" style="background:linear-gradient(135deg,var(--reset),#3f6f57)">
+      <div class="tt">Ce qui rend l'offre inoubliable</div>
+      <ul>
+        <li><b>Le twist :</b> bilans InBody entrée + sortie remis côte à côte, sous enveloppe scellée, au brunch final — effet « avant/après » spectaculaire.</li>
+        <li><b>Le souvenir :</b> un Carnet de Route 90 jours relié et signé The View, avec les recommandations personnalisées du coach.</li>
+        <li><b>Le coup de génie :</b> un rappel à J+30 (email ou appel du coach) — l'hôtel reste en tête tout un mois.</li>
+      </ul>
+    </div>
+
+    <div class="block-h"><span class="ic" style="background:var(--reset)">⏱</span> Programme heure par heure</div>
+
+    <div class="day-h"><span class="dn" style="background:var(--reset)">Jour 1</span> Diagnostic & relâchement</div>
+    <div class="tl">
+      <div class="tl-row"><div class="t">11h00</div><div class="a">Accueil, welcome juice détox au chiringuito</div></div>
+      <div class="tl-row"><div class="t">11h30</div><div class="a"><b>Bilan InBody individuel + entretien coach</b> (rotation par 4) ; en parallèle : marche pieds nus / yoga doux sur le sable</div></div>
+      <div class="tl-row"><div class="t">13h00</div><div class="a">Déjeuner détox méditerranéen (index glycémiques bas)</div></div>
+      <div class="tl-row"><div class="t">14h30</div><div class="a"><b>Rotation 3 ateliers (75 min)</b> : hammam · douche à jet + bain hydromassant · cohérence cardiaque sous chapiteau</div></div>
+      <div class="tl-row"><div class="t">17h00</div><div class="a">Temps libre piscine intérieure</div></div>
+      <div class="tl-row"><div class="t">20h00</div><div class="a">Dîner léger italien, coucher tôt assumé</div></div>
+    </div>
+
+    <div class="day-h"><span class="dn" style="background:var(--reset)">Jour 2</span> Le grand nettoyage</div>
+    <div class="tl">
+      <div class="tl-row"><div class="t">7h00</div><div class="a">Réveil musculaire face mer + option course / aquagym</div></div>
+      <div class="tl-row"><div class="t">8h00</div><div class="a">Petit-déjeuner détox</div></div>
+      <div class="tl-row"><div class="t">9h30</div><div class="a"><b>Séminaire / atelier de travail</b> (3h), pauses infusions & fruits</div></div>
+      <div class="tl-row"><div class="t">13h00</div><div class="a">Déjeuner méditerranéen</div></div>
+      <div class="tl-row"><div class="t">14h30</div><div class="a">Rotation : LPG · soin détox visage · sauna-hammam · <b>atelier déconnexion digitale</b></div></div>
+      <div class="tl-row"><div class="t">18h30</div><div class="a">Coucher de soleil au chiringuito, mocktails signature</div></div>
+      <div class="tl-row"><div class="t">20h00</div><div class="a">Dîner sur le sable</div></div>
+    </div>
+
+    <div class="day-h"><span class="dn" style="background:var(--reset)">Jour 3</span> Ancrage</div>
+    <div class="tl">
+      <div class="tl-row"><div class="t">8h00</div><div class="a">Yoga ou Pilates au lever</div></div>
+      <div class="tl-row"><div class="t">9h00</div><div class="a">Petit-déjeuner</div></div>
+      <div class="tl-row"><div class="t">10h00</div><div class="a"><b>Bilan InBody de sortie</b> + remise du Carnet de Route 90 jours</div></div>
+      <div class="tl-row"><div class="t">11h00</div><div class="a">Atelier de clôture « ce que je ramène / ce que je laisse » (cercle de parole)</div></div>
+      <div class="tl-row"><div class="t">12h30</div><div class="a">Brunch healthy au bord de la piscine, départ</div></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h" style="background:var(--reset)">⚙️ Fiche logistique</div>
+      <div class="panel-b">
+        <div class="logi-grid">
+          <div class="logi-col"><h4>Espaces</h4><ul><li>Spa complet</li><li>Chapiteau (cohérence cardiaque)</li><li>Salle de réunion</li><li>Chiringuito · piscine intérieure</li></ul></div>
+          <div class="logi-col"><h4>Prestataires clés</h4><ul><li>Coach bien-être / médecin du sport</li><li>Sophrologue</li><li>Prof de yoga</li><li>Agents spa : 1 par poste</li></ul></div>
+          <div class="logi-col"><h4>À prévoir</h4><ul><li>Consommables InBody</li><li>Kits (gourde, peignoir brandé)</li><li>Reliure des carnets (J-7)</li></ul></div>
+        </div>
+        <div class="stats">
+          <div class="st"><b>1 / 12</b><small>Facilitateur / pax</small></div>
+          <div class="st"><b>40-50</b><small>Jauge max (intimité)</small></div>
+          <div class="st"><b>J+30</b><small>Rappel coach</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h" style="background:var(--horizon)">📊 Mesure du ROI — livrable client</div>
+      <div class="panel-b"><p style="color:var(--muted);font-size:.96rem">Remis au commanditaire RH : un <b style="color:var(--deep)">rapport agrégé anonymisé</b> — variation moyenne masse hydrique / grasse, taux de participation wellness, score de satisfaction. C'est l'argument qui justifie le budget en comité.</p></div>
+    </div>
+
+    <div class="duo">
+      <div class="mini" style="border-top:3px solid var(--reset)">
+        <div class="mh">Argumentaire</div>
+        <p class="quote">« Le seul séminaire au Maroc où vos collaborateurs repartent avec une donnée santé mesurée — pas juste de bons souvenirs. »</p>
+        <div class="obj"><b>Objection « c'est cher » →</b> « Comparez au coût d'un burn-out ou d'un turnover. Ici, le ROI est documenté. »</div>
+      </div>
+      <div class="email-box">
+        <div class="mh" style="color:var(--gold-soft)">Accroche email</div>
+        <div class="obj-line">Objet : Et si votre comité repartait avec plus d'énergie qu'en arrivant ?</div>
+        <p>Bilan corporel à l'entrée et à la sortie, wellness médicalisé face à l'océan, à 40 min de vos bureaux. Trois jours pour vraiment décrocher — preuves à l'appui.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ DRIVE ============ -->
+<div class="offer" id="drive">
+  <div class="wrap">
+    <div class="offer-index" style="color:var(--drive)">02</div>
+    <div class="offer-head">
+      <div class="offer-kicker" style="color:var(--drive)">Offre 02 · Performance & Énergie</div>
+      <h2>Drive</h2>
+      <div class="offer-format">3 Jours / 2 Nuits · jusqu'à 80 pax</div>
+      <p class="offer-vibe">« Booster la vitalité individuelle et la performance collective par le sport, le challenge et la nutrition haute énergie. »</p>
+    </div>
+
+    <div class="two-col">
+      <div class="fact" style="border-left-color:var(--drive)"><div class="lbl">Cible</div><p>Équipes commerciales, start-ups en hyper-croissance, kick-off d'année, clients tech / finance.</p></div>
+      <div class="fact" style="border-left-color:var(--drive)"><div class="lbl">Promesse</div><p>L'élan qu'il faut pour attaquer l'année — avec un classement vivant et un trophée à la clé.</p></div>
+    </div>
+
+    <div class="twist" style="background:linear-gradient(135deg,var(--drive),#b35e15)">
+      <div class="tt">Ce qui rend l'offre inoubliable</div>
+      <ul>
+        <li><b>Le twist :</b> un scoring transversal sur les 3 jours (chaque activité rapporte des points), classement affiché en continu — tension narrative jusqu'au bout.</li>
+        <li><b>Le souvenir :</b> un aftermovie dynamique de 2 min monté et projeté le soir même de la remise des prix + médaille gravée par équipe.</li>
+        <li><b>L'ajout malin :</b> un « Energy Score » individuel (basé sur l'InBody) transformé en défi collectif — l'équipe qui progresse le plus marque des points.</li>
+      </ul>
+    </div>
+
+    <div class="block-h"><span class="ic" style="background:var(--drive)">⏱</span> Programme heure par heure</div>
+
+    <div class="day-h"><span class="dn" style="background:var(--drive)">Jour 1</span> Activation</div>
+    <div class="tl">
+      <div class="tl-row"><div class="t">11h00</div><div class="a">Accueil, smoothie protéiné, <b>InBody express</b> (masse musculaire / récup)</div></div>
+      <div class="tl-row"><div class="t">12h00</div><div class="a">Mot d'ouverture du dirigeant sous le chapiteau (vue mer)</div></div>
+      <div class="tl-row"><div class="t">13h00</div><div class="a">Déjeuner énergétique</div></div>
+      <div class="tl-row"><div class="t">14h30</div><div class="a"><b>Olympiades de la plage</b> : 4 équipes, 6 épreuves (beach volley, tir à la corde, relais pieds nus, paddle race, tir à l'arc cible flottante, énigme finale)</div></div>
+      <div class="tl-row"><div class="t">17h00</div><div class="a">Récupération : hammam / bain hydromassant / douche à jet</div></div>
+      <div class="tl-row"><div class="t">20h00</div><div class="a">Dîner italien convivial autour de pâtes fraîches</div></div>
+    </div>
+
+    <div class="day-h"><span class="dn" style="background:var(--drive)">Jour 2</span> Challenge & cohésion</div>
+    <div class="tl">
+      <div class="tl-row"><div class="t">7h00</div><div class="a">Circuit training plage ou salle (HIIT 30 min)</div></div>
+      <div class="tl-row"><div class="t">8h00</div><div class="a">Petit-déjeuner haute énergie</div></div>
+      <div class="tl-row"><div class="t">9h30</div><div class="a"><b>Golf challenge</b> (initiation / scramble) <b>OU</b> tournoi tennis double — chaque équipe joue dans les deux</div></div>
+      <div class="tl-row"><div class="t">13h00</div><div class="a">Déjeuner light au chiringuito</div></div>
+      <div class="tl-row"><div class="t">14h30</div><div class="a"><b>Course d'orientation à vélo</b> (plage / forêt / corniche), checkpoints à énigmes</div></div>
+      <div class="tl-row"><div class="t">20h00</div><div class="a">Remise des prix + <b>aftermovie</b> + BBQ méditerranéen sur la plage</div></div>
+    </div>
+
+    <div class="day-h"><span class="dn" style="background:var(--drive)">Jour 3</span> Récup active & vision</div>
+    <div class="tl">
+      <div class="tl-row"><div class="t">8h00</div><div class="a">Aquagym ou nage en piscine chauffée</div></div>
+      <div class="tl-row"><div class="t">9h30</div><div class="a">Atelier nutrition sportive + brunch « performance »</div></div>
+      <div class="tl-row"><div class="t">11h00</div><div class="a">Séance collective « comment garder cette énergie au bureau ? » (design thinking)</div></div>
+      <div class="tl-row"><div class="t">12h30</div><div class="a"><b>InBody de sortie</b> + Energy Score final, départ</div></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h" style="background:var(--drive)">⚙️ Fiche logistique</div>
+      <div class="panel-b">
+        <div class="logi-grid">
+          <div class="logi-col"><h4>Espaces</h4><ul><li>Plage · golf adjacent</li><li>Terrains de tennis</li><li>Piscines · chapiteau</li></ul></div>
+          <div class="logi-col"><h4>Matériel à acquérir</h4><ul><li>Flotte VTT / vélos électriques (15-20)</li><li>Beach games pro + tir à l'arc</li><li>Scoring digital (app type Goosechase)</li></ul></div>
+          <div class="logi-col"><h4>Prestataires</h4><ul><li>Coach sportif</li><li>Vidéaste (aftermovie J2)</li><li>Nutritionniste (J3)</li></ul></div>
+        </div>
+        <div class="stats">
+          <div class="st"><b>1 / 15</b><small>Animateur / pax</small></div>
+          <div class="st"><b>80</b><small>Jauge max</small></div>
+          <div class="st"><b>J2 soir</b><small>Aftermovie projeté</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h" style="background:var(--horizon)">📊 Mesure du ROI — livrable client</div>
+      <div class="panel-b"><p style="color:var(--muted);font-size:.96rem">Tableau d'équipe : <b style="color:var(--deep)">progression de l'Energy Score</b>, taux d'engagement aux épreuves, NPS interne. Idéal pour un kick-off où la direction veut « mesurer l'élan ».</p></div>
+    </div>
+
+    <div class="duo">
+      <div class="mini" style="border-top:3px solid var(--drive)">
+        <div class="mh">Argumentaire</div>
+        <p class="quote">« On ne motive pas une équipe commerciale avec un PowerPoint. On la motive avec de l'adrénaline, un classement et un trophée. »</p>
+        <div class="obj"><b>Objection « profils sédentaires » →</b> « Chaque épreuve a une version douce ; le scoring valorise la stratégie autant que le physique. »</div>
+      </div>
+      <div class="email-box">
+        <div class="mh" style="color:var(--gold-soft)">Accroche email</div>
+        <div class="obj-line">Objet : Le kick-off dont vos commerciaux parleront toute l'année</div>
+        <p>Olympiades de plage, défi vélo sur la corniche, aftermovie projeté le soir même. L'énergie qu'il faut pour attaquer l'année — face à l'océan.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SAVOR ============ -->
+<div class="offer alt" id="savor">
+  <div class="wrap">
+    <div class="offer-index" style="color:var(--savor)">03</div>
+    <div class="offer-head">
+      <div class="offer-kicker" style="color:var(--savor)">Offre 03 · Gastronomie & Cohésion</div>
+      <h2>Savor</h2>
+      <div class="offer-format">3 Jours / 2 Nuits · 40-50 pax</div>
+      <p class="offer-vibe">« Créer du lien autour de la table, de la mer et du goût. La cohésion par le partage et la création. »</p>
+    </div>
+
+    <div class="two-col">
+      <div class="fact" style="border-left-color:var(--savor)"><div class="lbl">Cible</div><p>Agences premium, équipes marketing / créatives, incentive de fidélisation client, comités mixtes.</p></div>
+      <div class="fact" style="border-left-color:var(--savor)"><div class="lbl">Promesse</div><p>Un format élégant et féminin-friendly — où l'on se découvre vraiment en cuisinant ensemble.</p></div>
+    </div>
+
+    <div class="twist" style="background:linear-gradient(135deg,var(--savor),#7e2f28)">
+      <div class="tt">Ce qui rend l'offre inoubliable</div>
+      <ul>
+        <li><b>Le twist :</b> le menu signature gagnant entre à la carte d'un restaurant le temps d'une saison, au nom de l'équipe — fierté et lien durable au lieu.</li>
+        <li><b>Le souvenir :</b> un livre de recettes relié et personnalisé, avec les créations de l'équipe (photos + recettes).</li>
+        <li><b>L'ajout :</b> un « passeport des saveurs » tamponné à chaque atelier — gamification douce.</li>
+      </ul>
+    </div>
+
+    <div class="block-h"><span class="ic" style="background:var(--savor)">⏱</span> Programme heure par heure</div>
+
+    <div class="day-h"><span class="dn" style="background:var(--savor)">Jour 1</span> Méditerranée</div>
+    <div class="tl">
+      <div class="tl-row"><div class="t">16h00</div><div class="a">Accueil, apéro signature au chiringuito face au coucher de soleil</div></div>
+      <div class="tl-row"><div class="t">17h00</div><div class="a"><b>Atelier « Tablée à l'aveugle »</b> : chacun tire un ingrédient et retrouve ses partenaires de recette (icebreaker)</div></div>
+      <div class="tl-row"><div class="t">20h00</div><div class="a">Dîner méditerranéen en grande tablée, menu 5 services raconté par le chef</div></div>
+    </div>
+
+    <div class="day-h"><span class="dn" style="background:var(--savor)">Jour 2</span> Battle culinaire & terroir</div>
+    <div class="tl">
+      <div class="tl-row"><div class="t">9h00</div><div class="a">Petit-déjeuner</div></div>
+      <div class="tl-row"><div class="t">9h30</div><div class="a"><b>Chasse au trésor « marché du chef »</b> : budget, liste d'ingrédients, énigmes vers le marché de Bouznika</div></div>
+      <div class="tl-row"><div class="t">13h00</div><div class="a">Déjeuner léger</div></div>
+      <div class="tl-row"><div class="t">14h30</div><div class="a"><b>Top Chef Battle</b> dans les cuisines : 3-4 équipes, jury croisé (2h). Non-participants en rotation wellness</div></div>
+      <div class="tl-row"><div class="t">20h00</div><div class="a">Dégustation = <b>dîner de gala</b>, remise du trophée, DJ au chiringuito</div></div>
+    </div>
+
+    <div class="day-h"><span class="dn" style="background:var(--savor)">Jour 3</span> Slow morning</div>
+    <div class="tl">
+      <div class="tl-row"><div class="t">8h30</div><div class="a">Yoga au lever du soleil sur la plage</div></div>
+      <div class="tl-row"><div class="t">10h00</div><div class="a">Brunch signature au bord de la piscine + <b>remise des livres de recettes</b></div></div>
+      <div class="tl-row"><div class="t">11h30</div><div class="a">Atelier optionnel : œnologie / mixologie healthy (alternative thés du monde)</div></div>
+      <div class="tl-row"><div class="t">13h00</div><div class="a">Départ</div></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h" style="background:var(--savor)">⚙️ Fiche logistique</div>
+      <div class="panel-b">
+        <div class="logi-grid">
+          <div class="logi-col"><h4>Espaces</h4><ul><li>Cuisines des 3 restaurants</li><li>Chiringuito · salles</li><li>Spa (rotations)</li></ul></div>
+          <div class="logi-col"><h4>Matériel</h4><ul><li>Tabliers brandés · ingrédients</li><li>Passeports + tampons</li><li>Reliure des livres (J-3, avec photos)</li></ul></div>
+          <div class="logi-col"><h4>Prestataires</h4><ul><li>Chefs internes (jury)</li><li>Sommelier / mixologue (J3)</li></ul></div>
+        </div>
+        <div class="stats">
+          <div class="st"><b>1 / 12</b><small>Animateur / pax</small></div>
+          <div class="st"><b>1 / 8-10</b><small>Chef / amateurs (sécurité)</small></div>
+          <div class="st"><b>40-50</b><small>Jauge max</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h" style="background:var(--horizon)">📊 Mesure du ROI — livrable client</div>
+      <div class="panel-b"><p style="color:var(--muted);font-size:.96rem">Plus émotionnel : <b style="color:var(--deep)">NPS interne</b>, taux de mixité des binômes (mesure du décloisonnement), nombre de menus signature retenus. Excellent pour un incentive de fidélisation.</p></div>
+    </div>
+
+    <div class="duo">
+      <div class="mini" style="border-top:3px solid var(--savor)">
+        <div class="mh">Argumentaire</div>
+        <p class="quote">« La cuisine est le plus vieux des team buildings : on se parle vraiment quand on cuisine ensemble. Ici, en plus, votre plat entre à la carte. »</p>
+        <div class="obj"><b>Objection « trop soft » →</b> « Le Top Chef Battle avec jury et trophée est aussi compétitif qu'une olympiade — mais tout le monde peut jouer. »</div>
+      </div>
+      <div class="email-box">
+        <div class="mh" style="color:var(--gold-soft)">Accroche email</div>
+        <div class="obj-line">Objet : Et si votre équipe créait le plat signature de la saison ?</div>
+        <p>Battle culinaire, chasse au trésor gourmande, livre de recettes à emporter. Le team building qui se savoure — au bord de l'eau.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HORIZON ============ -->
+<div class="offer" id="horizon">
+  <div class="wrap">
+    <div class="offer-index" style="color:var(--horizon)">04</div>
+    <div class="offer-head">
+      <div class="offer-kicker" style="color:var(--horizon)">Offre 04 · Séminaire stratégique & Bien-être</div>
+      <h2>Horizon</h2>
+      <div class="offer-format">2 Jours / 1 Nuit · modulable 3J/2N · 25-30 pax</div>
+      <p class="offer-vibe">« 50% travail, 50% ressourcement. La formule pour les décideurs qui veulent rentrer avec des décisions ET de l'énergie. »</p>
+    </div>
+
+    <div class="two-col">
+      <div class="fact" style="border-left-color:var(--horizon)"><div class="lbl">Cible</div><p>CODIR, COMEX, comités stratégiques, sessions de planning annuel.</p></div>
+      <div class="fact" style="border-left-color:var(--horizon)"><div class="lbl">Différenciateur</div><p>Le wellness inscrit au planning officiel — pas en option « si on a le temps ». C'est ce qui force la déconnexion.</p></div>
+    </div>
+
+    <div class="twist" style="background:linear-gradient(135deg,var(--horizon),#1c2f3a)">
+      <div class="tt">Ce qui rend l'offre inoubliable</div>
+      <ul>
+        <li><b>Le twist :</b> les décisions de l'atelier sont formalisées en feuille de route professionnelle, remise le jour même — le COMEX repart avec un livrable, pas des post-it.</li>
+        <li><b>Le souvenir :</b> synthèse stratégique reliée + carreau de zellige d'engagement (chacun y inscrit son engagement).</li>
+        <li><b>Le geste :</b> un accès wellness offert au retour — qui fait revenir chaque dirigeant individuellement.</li>
+      </ul>
+    </div>
+
+    <div class="block-h"><span class="ic" style="background:var(--horizon)">⏱</span> Programme heure par heure</div>
+
+    <div class="day-h"><span class="dn" style="background:var(--horizon)">Jour 1</span> Travailler avec la mer pour décor</div>
+    <div class="tl">
+      <div class="tl-row"><div class="t">9h30</div><div class="a">Arrivée, café d'accueil sous le chapiteau ; <b>InBody flash</b> (10 min/pers en roulement)</div></div>
+      <div class="tl-row"><div class="t">10h00</div><div class="a">Séminaire de travail en salle vue mer, pauses au bord de la piscine</div></div>
+      <div class="tl-row"><div class="t">13h00</div><div class="a">Déjeuner méditerranéen privatisé</div></div>
+      <div class="tl-row"><div class="t">14h30</div><div class="a">Suite séminaire <b>OU</b> « walk & talk » stratégique en binômes sur la plage</div></div>
+      <div class="tl-row"><div class="t">17h00</div><div class="a"><b>Rotation wellness obligatoire</b> (planning) : LPG / soin destress / hammam / douche à jet / bain hydromassant</div></div>
+      <div class="tl-row"><div class="t">20h00</div><div class="a">Dîner italien intimiste</div></div>
+    </div>
+
+    <div class="day-h"><span class="dn" style="background:var(--horizon)">Jour 2</span> Décision & ancrage</div>
+    <div class="tl">
+      <div class="tl-row"><div class="t">7h00</div><div class="a">Option yoga / piscine / golf 9 trous</div></div>
+      <div class="tl-row"><div class="t">8h30</div><div class="a">Petit-déjeuner</div></div>
+      <div class="tl-row"><div class="t">9h00</div><div class="a"><b>Atelier de décision</b> (World Café ou Six Thinking Hats)</div></div>
+      <div class="tl-row"><div class="t">12h00</div><div class="a">Déjeuner détendu au chiringuito</div></div>
+      <div class="tl-row"><div class="t">14h00</div><div class="a">Cohésion courte mais marquante : <b>« build the bridge »</b> en bois flotté OU paddle en binômes</div></div>
+      <div class="tl-row"><div class="t">16h00</div><div class="a"><b>Restitution de la feuille de route</b> + carreau d'engagement + photo de groupe, départ</div></div>
+    </div>
+    <p class="note">Extension 3J/2N : journée intermédiaire 100% off-site — golf 18 trous, vélo vers Mansouria, ou journée wellness intégrale.</p>
+
+    <div class="panel">
+      <div class="panel-h" style="background:var(--horizon)">⚙️ Fiche logistique</div>
+      <div class="panel-b">
+        <div class="logi-grid">
+          <div class="logi-col"><h4>Espaces</h4><ul><li>Grande salle de réunion vue mer</li><li>Chapiteau · plage</li><li>Spa · golf</li></ul></div>
+          <div class="logi-col"><h4>À prévoir</h4><ul><li>Matériel facilitation (World Café)</li><li>Carreaux zellige + peinture</li><li>Impression reliée de la synthèse (sur place, fin J2)</li></ul></div>
+          <div class="logi-col"><h4>Prestataires</h4><ul><li>Facilitateur senior (poste clé)</li><li>Coach corporel</li><li>Agents spa</li></ul></div>
+        </div>
+        <div class="stats">
+          <div class="st"><b>1 / 15</b><small>Facilitateur / pax</small></div>
+          <div class="st"><b>25-30</b><small>Jauge (format CODIR)</small></div>
+          <div class="st"><b>Jour même</b><small>Feuille de route remise</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h" style="background:var(--horizon)">📊 Mesure du ROI — livrable client</div>
+      <div class="panel-b"><p style="color:var(--muted);font-size:.96rem">Le livrable EST le ROI : une <b style="color:var(--deep)">feuille de route datée et priorisée</b>, le nombre de décisions actées, les engagements individuels écrits. Le wellness obligatoire = taux de déconnexion réel.</p></div>
+    </div>
+
+    <div class="duo">
+      <div class="mini" style="border-top:3px solid var(--horizon)">
+        <div class="mh">Argumentaire</div>
+        <p class="quote">« Dans 90% des séminaires CODIR, le spa est optionnel — donc personne n'y va. Ici il est bloqué dans l'agenda comme une réunion. »</p>
+        <div class="obj"><b>Objection « pas le temps pour du wellness » →</b> « C'est justement parce que vous n'avez jamais le temps qu'on le rend obligatoire. Et vous repartez avec une feuille de route concrète. »</div>
+      </div>
+      <div class="email-box">
+        <div class="mh" style="color:var(--gold-soft)">Accroche email</div>
+        <div class="obj-line">Objet : Décider mieux, en ayant vraiment décroché</div>
+        <p>Séminaire stratégique face à l'océan : 50% travail structuré, 50% ressourcement inscrit à l'agenda. Vous repartez avec des décisions actées — et de l'énergie.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPARATIF -->
+<section class="alt" id="valeur">
+  <div class="wrap">
+    <div class="tag">La valeur ajoutée</div>
+    <h2 class="s-title">Ce que cette collection apporte</h2>
+    <p class="s-intro">Au-delà de bons programmes : la précision opérationnelle, la preuve du ROI et le souvenir qui fait revenir.</p>
+    <table class="cmp-table">
+      <thead><tr><th>Dimension</th><th>Programme standard</th><th>Collection Signature</th></tr></thead>
+      <tbody>
+        <tr><td>Opérationnel</td><td class="before">Matin / Midi / Soir</td><td class="after">Heure par heure + logistique + plan B météo</td></tr>
+        <tr><td>ROI</td><td class="before">Évoqué</td><td class="after">Livrable client formalisé par offre</td></tr>
+        <tr><td>Vente</td><td class="before">Aucun outil</td><td class="after">Argumentaire + objection + email type</td></tr>
+        <tr><td>Mémorabilité</td><td class="before">Un bon souvenir</td><td class="after">Objet tangible : carnet, aftermovie, livre, feuille de route</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">The View <span style="color:var(--gold-soft)">Bouznika</span></div>
+    <div class="sep"></div>
+    <p>Collection Signature · EXPERIENCIAH · Quatre séminaires premium ancrés dans l'ADN wellness, gastronomique et front de mer de l'hôtel. Détox, performance, gastronomie, stratégie — la transformation, mesurée.</p>
+  </div>
+</footer>
+
+</body>
+</html>

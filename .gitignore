@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+.netlify/
+.claude/
+deploy/
+deploy-signature/
+*.log
+*.pdf
+*.docx.png

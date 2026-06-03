@@ -157,7 +157,7 @@ children.push(
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 600 },
     children: [t("Cinq expériences clés en main — face à l'océan", { italics: true, color: MUTED, size: 26 })] }),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 40 },
-    children: [t("5 offres   ·   3 jours / 2 nuits   ·   15 à 80 participants   ·   40 min de Casa & Rabat", { color: MUTED, size: 20 })] }),
+    children: [t("6 offres   ·   2 à 3 jours   ·   15 à 120+ participants   ·   40 min de Casa & Rabat", { color: MUTED, size: 20 })] }),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 1400 },
     children: [t("Document de travail — version pour relecture", { italics: true, color: MUTED, size: 18 })] }),
   new Paragraph({ children: [new PageBreak()] }),
@@ -168,13 +168,20 @@ children.push(
   h1("Le positionnement", OCEAN),
   para("The View Bouznika réunit ce qu'aucun concurrent ne combine sur la côte : un wellness médicalisé (InBody, LPG, hammams, bains hydromassants), un front de mer avec golf adjacent et chapiteau, trois restaurants thématisés, le tout sur un site compact entre Casablanca et Rabat. Ces cinq offres transforment ces atouts en expériences mémorables.", { spacing: { after: 120 } }),
   h2("Benchmark concurrentiel", TEAL),
-  bullet([t("Mazagan Beach Resort (El Jadida) : ", { bold: true }), t("250 ha, golf 18 trous, MICE intégré. Faille — trop vaste, peu intime, wellness non central.")]),
-  bullet([t("Conrad Rabat Arzana : ", { bold: true }), t("premium feutré, gastronomie et banquets. Faille — team building peu structuré en offres packagées.")]),
-  bullet([t("Agences spécialisées (Red Rock, Morocco Retreats) : ", { bold: true }), t("formats packagés à thématique RH. Faille — aucun lieu propre, elles dépendent des hôtels.")]),
+  bullet([t("Mazagan Beach Resort (El Jadida) : ", { bold: true }), t("250 ha, golf 18 trous, MICE intégré. Faille — site trop dispersé, peu intime, wellness non central dans le discours MICE.")]),
+  bullet([t("Conrad Rabat Arzana : ", { bold: true }), t("resort 5★ front de mer (Plage des Nations), gastronomie premium, spa. Faille — team building peu structuré, pas d'offres packagées thématisées, pas de golf.")]),
+  bullet([t("Sofitel Marrakech Lounge & Spa : ", { bold: true }), t("5★ urbain, spa Shiseido, piscine, forte réputation MICE. Faille — pas de front de mer, pas de golf sur site, éloigné des grands bassins d'entreprises côtiers.")]),
+  bullet([t("Fairmont Royal Palm Marrakech : ", { bold: true }), t("resort 5★ avec golf 18 trous, cadre exceptionnel. Faille — 3h de route depuis Casablanca, positionnement luxe inaccessible pour groupes corporate standards.")]),
+  bullet([t("Club Med La Palmeraie Marrakech : ", { bold: true }), t("formule tout-compris, sports variés, grande capacité. Faille — image « vacances en famille », manque de personnalisation premium et de dimension wellness médicalisée.")]),
+  bullet([t("Tikida Golf Palace Agadir : ", { bold: true }), t("5★ avec golf, proche d'Agadir. Faille — trop éloigné de Casablanca-Rabat (5h de route), offre team building non structurée.")]),
+  bullet([t("Agences spécialisées (Red Rock, Morocco Retreats, AMA Voyages) : ", { bold: true }), t("formats packagés à thématique RH claire. Faille — aucun lieu propre, elles dépendent des hôtels et ne peuvent proposer le wellness médicalisé intégré.")]),
   h2("Le boulevard stratégique", TEAL),
-  bullet("Wellness mesurable (InBody, LPG, detox) intégré au team building — personne ne l'a sur la côte."),
-  bullet("Site compact et complet (front de mer + golf + chapiteau + 3 restaurants) à l'inverse de Mazagan dispersé."),
-  bullet("Proximité imbattable : 40 min de Casablanca comme de Rabat."),
+  bullet([t("Wellness médicalisé et mesurable (InBody, LPG, bains hydromassants, hammam) intégré au programme team building ", {}), t("— personne ne le fait sur la côte atlantique marocaine. Les participants repartent avec des données concrètes sur leur état physique.")]),
+  bullet([t("Site 5 étoiles compact et complet ", {}), t("(front de mer + golf 18 trous + chapiteau modulable + 3 restaurants thématisés + spa 3 200 m²) sur un seul domaine, à l'inverse de Mazagan où tout est dispersé sur 250 ha.")]),
+  bullet([t("Proximité stratégique imbattable : ", {}), t("40 min de Casablanca, 40 min de Rabat. Aucun autre resort 5 étoiles avec ces équipements n'est aussi bien positionné entre les deux capitales économiques.")]),
+  bullet([t("Capacité d'accueil jusqu'à 120+ participants ", {}), t("sur les offres grand format — chapiteau de grande capacité, plage privatisable, espaces modulables — là où les hôtels urbains saturent vite.")]),
+  bullet([t("Le Chay Lounge : une signature unique. ", {}), t("Espace thé marocain authentique avec thés de crus, ghriyba signature maison et tea times — un actif de différenciation qu'aucun concurrent ne possède, et qui crée une empreinte mémorielle forte.")]),
+  bullet([t("Souvenir tangible systématique ", {}), t("à chaque offre : carnet de colo, collier d'immunité, zellige peint, clip vidéo — le client ne repart jamais sans un objet qui prolonge l'expérience au bureau.")]),
   new Paragraph({ children: [new PageBreak()] }),
 );
 
@@ -200,17 +207,17 @@ function offer({ num, name, accent, kicker, format, vibe, cible, fil, days, twis
 
 offer({
   num: "A", name: "Koh-Bouznika", accent: KOH, kicker: "Aventure",
-  format: "3 Jours / 2 Nuits  ·  30 à 80 participants",
-  vibe: "Un Koh-Lanta version bord de mer — plus glamour, moins boueux. Tribus, totems, immunités, alliances secrètes… et le confort 4 étoiles le soir.",
+  format: "3 Jours / 2 Nuits  ·  30 à 120 participants",
+  vibe: "Un Koh-Lanta version bord de mer — plus glamour, moins boueux. Tribus, totems, immunités, alliances secrètes… et le confort 5 étoiles le soir.",
   cible: "Équipes commerciales, start-ups, agences en quête de fun et de compétition saine.",
   fil: "Le groupe est divisé en tribus (Mer, Vent, Sable, Soleil) — classement et rebondissements sur 3 jours.",
   days: [
     { label: "JOUR 1", title: "Naufragés en terre inconnue", rows: [
-      ["10h30", "Arrivée, welcome juice au chiringuito, remise des room-keys"],
-      ["11h00", "**Cérémonie d'ouverture** : règles du jeu, tirage des tribus, distribution des bandanas"],
-      ["11h30", "**Atelier Totem** : totem en bois flotté, drapeau et cri de guerre sur la plage"],
+      ["10h30", "Arrivée, **accueil thé signature & Ghriyba maison au Chay Lounge** — thé de crus, pâtisserie signature The View, remise des room-keys"],
+      ["11h00", "**Cérémonie d'ouverture** : règles du jeu, tirage des tribus au sort (Mer, Vent, Sable, Soleil), distribution des bandanas de couleur"],
+      ["11h30", "**Atelier Totem** (1h) : par tribu, sculpture d'un totem en bois flotté ramassé sur la plage, confection du drapeau de tribu (peinture tissu), composition du cri de guerre et de la danse d'intimidation — présentés aux autres tribus à 12h30"],
       ["13h00", "Déjeuner « naufragés » au chiringuito, pieds dans le sable"],
-      ["14h30", "**Épreuve 1 — Orientation** : parcours sur le domaine + golf, balises à énigmes"],
+      ["14h30", "**Épreuve 1 — Orientation** : parcours de 10 balises GPS sur le domaine (plage, jardin, golf adjacent) — chaque balise révèle une énigme sur l'histoire de Bouznika, de la marque ou de l'équipe. Les tribus partent à 2 min d'intervalle, smartphone interdit, seule une carte papier est fournie. La tribu qui collecte le plus de balises en 90 min remporte les points."],
       ["16h30", "Pause + 1re rotation wellness (tribu en tête = hammam prioritaire)"],
       ["19h30", "Apéro coucher de soleil"],
       ["20h00", "**Dîner « Survivor BBQ »** autour du feu"],
@@ -219,7 +226,7 @@ offer({
     { label: "JOUR 2", title: "Les grandes épreuves", rows: [
       ["7h30", "Réveil musculaire face mer (option)"],
       ["8h00", "Petit-déjeuner"],
-      ["9h30", "**Épreuve 2 — Parcours d'aventure** : équilibre dans l'eau, parcours du combattant, puzzle géant, tir à l'arc"],
+      ["9h30", "**Épreuve 2 — Parcours d'aventure** (4 stations en simultané, 15 min par station, rotation des tribus) : ① Traversée d'équilibre sur slacklines au-dessus du sable — tomber = revenir au départ ; ② Boot Camp plage : pompes, gainage, squat-sauts en formation tribu — le temps collectif est mesuré ; ③ Puzzle géant en bois (100 pièces) assemblé par la tribu pieds dans l'eau ; ④ Tir à l'arc sur cibles flottantes en bord de mer — 5 flèches par membre, score cumulé. Matériel nécessaire : slacklines × 4, sets tir à l'arc × 4, puzzles × 4, chronomètres"],
       ["12h00", "**Épreuve de confort** : la tribu gagnante remporte l'accès VIP wellness"],
       ["13h00", "Déjeuner méditerranéen"],
       ["14h30", "**Rotation parallèle** : wellness (hammam / bain hydromassant / douche à jet) et beach games + golf"],
@@ -229,8 +236,8 @@ offer({
     ]},
     { label: "JOUR 3", title: "La finale & les poteaux", rows: [
       ["8h00", "Petit-déjeuner"],
-      ["9h30", "**Épreuve mythique des poteaux** : équilibre sur la plage"],
-      ["11h00", "**Orientation finale** pour le collier d'immunité"],
+      ["9h30", "**Épreuve mythique des poteaux** : 4 poteaux plantés dans le sable à 40 cm de hauteur, un représentant par tribu monte dessus (pieds joints) et doit tenir le plus longtemps possible sans toucher le sol — le dernier debout remporte l'immunité pour sa tribu. Les autres membres soutiennent moralement depuis la plage. Ambiance musicale, maître de jeu en live."],
+      ["11h00", "**Course à l'immunité finale** : grand jeu de piste chrono sur l'ensemble du domaine — 5 énigmes à résoudre en équipe, la dernière menant à l'emplacement du trophée caché. La tribu qui le trouve en premier le brandit au signal."],
       ["12h00", "**Grand vote final** + couronnement, remise du trophée"],
       ["13h00", "**Brunch des vainqueurs** au bord de la piscine"],
       ["14h30", "Photo de groupe avec totems, départ"],
@@ -253,10 +260,10 @@ offer({
     { label: "JOUR 1", title: "Jour de rentrée", rows: [
       ["11h00", "Arrivée, **distribution des kits de colo** (casquette, badge, carnet, gourde)"],
       ["11h30", "Constitution des chambrées + élection des chefs de chambrée"],
-      ["12h00", "**Grand jeu de piste de bienvenue** à la découverte du camp"],
+      ["12h00", "**Grand jeu de piste de bienvenue** (45 min) : 8 étapes à travers tout le domaine (chiringuito, plage, golf, spa, jardins, restaurants) — chaque étape révèle un indice sur le règlement de la colo et un secret de chambrée. Format rallye : les chambrées partent à 3 min d'intervalle, une fiche de route papier par groupe, pas de smartphone. Bonus : la chambrée qui trouve le mot de passe final en premier décroche la meilleure table au déjeuner."],
       ["13h00", "Déjeuner convivial grandes tablées"],
       ["14h30", "**Goûter à l'ancienne** : crêpes & chocolat chaud au chiringuito"],
-      ["15h00", "Ateliers tournants : accrobranche soft / beach games / blason de chambrée"],
+      ["15h00", "Ateliers tournants (3 stations × 30 min) : **Boot Camp plage** (pompes, gainage, relais en équipe sur le sable — encadré, accessible à tous, matériel : cordes, cônes, chrono) / **Beach games** (molkky, pétanque géante, badminton) / **Blason de chambrée** (création collective sur grand carton : couleurs, devise, dessin — exposé au mur toute la colo)"],
       ["19h30", "Dîner"],
       ["21h00", "**Veillée talents** : sketch / chanson par chambrée"],
       ["22h00", "Chamallows grillés au feu de camp"],
@@ -266,7 +273,7 @@ offer({
       ["9h30", "**Olympiades rétro** : course en sac, tir à la corde, relais à 3 jambes, course à l'œuf"],
       ["12h00", "**Grande bataille d'eau** encadrée à la piscine"],
       ["13h00", "Déjeuner"],
-      ["14h30", "Ateliers détente : bracelets brésiliens, photo polaroid, rotation wellness"],
+      ["14h30", "Ateliers détente (3 stations × 30 min) : **Séance soin hammam & gommage au sel** (restant dans l'univers spa The View) / **Atelier photo polaroid + légendes** (chacun colle ses photos dans le carnet de colo avec la légende du moment) / **Initiation yoga nidra** (relaxation guidée de 20 min, ambiance coussins & musique douce sous le chapiteau)"],
       ["18h00", "Préparation des costumes de la boum"],
       ["20h00", "Dîner"],
       ["21h30", "**LA GRANDE BOUM** déguisée (thème années 90), DJ"],
@@ -338,11 +345,11 @@ offer({
   fil: "Le groupe devient une famille qui prépare ensemble une grande Dyafa (festin de fête) pour le dernier jour.",
   days: [
     { label: "JOUR 1", title: "L'accueil à la marocaine", rows: [
-      ["11h00", "Arrivée, **thé à la menthe & cornes de gazelle**, eau de fleur d'oranger"],
+      ["11h00", "Arrivée, **accueil au Chay Lounge** : thé signature The View (sélection de crus), Ghriyba signature maison, tea time à la marocaine — la première empreinte de l'hospitalité The View"],
       ["11h30", "Mot de bienvenue, constitution de la « grande famille »"],
-      ["12h00", "**Atelier « Souk »** : chasse aux ingrédients & épices dans le domaine"],
+      ["12h00", "**Atelier « Souk »** (1h) : chaque binôme reçoit une liste d'ingrédients et d'épices (ras el hanout, safran, argan, cumin, eau de fleur d'oranger…) cachés en 12 points du domaine avec une énigme pour chaque localisation. Budget fictif de 100 DH par équipe, choix à faire — l'équipe qui revient avec le meilleur assortiment (jugé par le chef) démarre l'atelier cuisine avec un avantage."],
       ["13h00", "Déjeuner méditerranéen du terroir"],
-      ["14h30", "Ateliers tournants : **henné & calligraphie** / wellness (hammam au savon noir)"],
+      ["14h30", "Ateliers tournants (3 stations × 35 min) : **Pâtisserie Ghriyba** avec notre pâtissier — préparation de la recette signature The View (noix de coco, sésame, eau de fleur d'oranger) que chacun repart avec en sachet personnalisé / **Calligraphie arabe** encadrée par un artiste — chacun calligraphie le nom de l'entreprise ou un mot en arabe sur une carte à emporter / **Hammam au savon noir & gommage kessa** en rotation au spa"],
       ["20h00", "**Dîner du terroir** + conteur (halqa) au coin du feu"],
     ]},
     { label: "JOUR 2", title: "Les mains à la pâte", rows: [
@@ -365,7 +372,7 @@ offer({
   twist: ["Chacun repart avec un carreau de zellige peint à la main et le livre de recettes de l'équipe. Ancrage culturel rare — aucun concurrent corporate ne joue cette carte avec autant de soin."],
   espaces: ["Cuisines des restaurants", "Salles / chapiteau (ateliers)", "Hammam traditionnel", "Extérieurs (Dyafa)"],
   materiel: ["Carreaux de zellige bruts + peintures", "Tour de poterie / argile", "Savon noir & gants kessa", "Déco orientale (tapis, lanternes)"],
-  presta: ["Maâlem Gnawa + musiciens", "1 conteur (halqa)", "Artistes henné + calligraphe", "Maître artisan zellige"],
+  presta: ["Maâlem Gnawa + musiciens", "1 conteur (halqa)", "Artiste calligraphe", "Pâtissier (Ghriyba)", "Maître artisan zellige"],
   stats: [["1 / 12", "animateur / pax"], ["1 / 8-10", "chef / cuisiniers amateurs"], ["30-50", "jauge"]],
 });
 
@@ -402,37 +409,89 @@ offer({
   stats: [["1 / 25", "animateur / pax"], ["2-3", "encadrants"], ["≤ 25", "jauge"]],
 });
 
+const GRAND = "1A5276";
+
+offer({
+  num: "F", name: "Ocean Summit", accent: GRAND, kicker: "Grand Format · 100-200 participants",
+  format: "3 Jours / 2 Nuits  ·  100 à 200 participants",
+  vibe: "La seule formule team building 5 étoiles front de mer conçue pour les grands groupes — sans sacrifier ni la qualité, ni le wellness, ni la personnalisation.",
+  cible: "Grands groupes corporate (100-200 pax), conventions annuelles, kick-offs régionaux, séminaires de direction avec toutes les équipes réunies.",
+  fil: "Le groupe est divisé en 8 à 10 tribus de 15-20 personnes. Chaque tribu vit son propre parcours tout en contribuant à une grande fresque collective révélée le dernier soir.",
+  days: [
+    { label: "JOUR 1", title: "L'installation — accueil & immersion", rows: [
+      ["10h00-12h00", "Arrivée en vagues par tribus (toutes les 20 min), **accueil thé & Ghriyba au Chay Lounge** par groupe de 20 max — flux maîtrisé, pas de goulot"],
+      ["11h00", "**Cérémonie d'ouverture plénière** sous le chapiteau : discours du dirigeant, présentation des tribus, règles du jeu Grand Format"],
+      ["12h30", "Déjeuner en grandes tablées (buffet méditerranéen sur la terrasse et le chiringuito)"],
+      ["14h30", "**Épreuve de cohésion simultanée** : 8-10 ateliers parallèles sur l'ensemble du domaine (plage + golf + jardins), chaque tribu fait son atelier en 45 min puis rotation — maître de jeu central avec talkie-walkie"],
+      ["17h00", "**Rotation wellness** : 4 créneaux de 30 min au spa, 2 tribus par créneau — les autres en free time piscine / plage"],
+      ["19h30", "Apéritif au coucher de soleil sur la grande terrasse"],
+      ["20h30", "**Grand dîner festif** sous le chapiteau + plage — tables de tribu, ambiance musicale live"],
+    ]},
+    { label: "JOUR 2", title: "Les grandes épreuves collectives", rows: [
+      ["8h00", "Petit-déjeuner"],
+      ["9h30", "**Olympiades Ocean Summit** : 6 épreuves en simultané sur la plage (beach volley, relais aquatique, tir à la corde, puzzle géant collectif, tir à l'arc, course de radeaux en bois flotté) — toutes les tribus en même temps, 1 encadrant par épreuve"],
+      ["13h00", "Déjeuner"],
+      ["14h30", "**Atelier fresque collective** : chaque tribu peint un panneau (1m × 1m) représentant sa vision de l'entreprise — les 10 panneaux s'assemblent en une grande murale exposée lors de la cérémonie finale"],
+      ["17h00", "Rotation wellness (2e vague)"],
+      ["20h00", "**Dîner thématique** — chaque table de tribu présente son panneau en 2 min"],
+      ["21h30", "**Grand Conseil** : annonce du classement, suspense maintenu jusqu'au J3"],
+    ]},
+    { label: "JOUR 3", title: "La grande finale & la fresque révélée", rows: [
+      ["8h00", "Petit-déjeuner"],
+      ["9h30", "**Épreuve finale simultanée** : chaque tribu envoie 2 représentants pour la grande épreuve d'équilibre (poteaux) — le public des autres tribus encourage depuis la plage"],
+      ["11h00", "**Assemblage de la fresque collective** : les 10 panneaux sont réunis et exposés devant tout le groupe — révélation du nom de l'œuvre collective choisie par vote"],
+      ["12h00", "**Cérémonie de clôture plénière** : remise du trophée, discours, photo de groupe officielle"],
+      ["13h00", "Brunch de victoire collectif"],
+      ["14h30", "Départ — chacun repart avec son bandana de tribu + une photo de la fresque collective"],
+    ]},
+  ],
+  twist: [
+    "La fresque collective de 10 m² assemblée le dernier jour — chaque tribu y a contribué sans voir le tout. La révélation est un moment de forte émotion. L'œuvre reste exposée à The View Bouznika comme trace de votre groupe.",
+    "Le Grand Format ne sacrifie pas la personnalisation : rotation wellness maintenue, accueil en petits groupes au Chay Lounge, ateliers simultanés avec 1 encadrant par poste. La qualité 5 étoiles tient à 200 pax.",
+  ],
+  espaces: ["Chapiteau plénière (200 pax)", "Plage privatisée (épreuves)", "Terrasses + chiringuito (repas)", "Spa 3 200 m² (rotations)", "Golf adjacent (balises)", "Jardins (ateliers créatifs)"],
+  materiel: ["10 panneaux toile + peintures (fresque)", "Kits tribus × 10 (bandanas, drapeaux)", "Matériel olympiades × 10 postes", "Sono + éclairage chapiteau", "10 talkies-walkies (coordination)"],
+  presta: ["1 directeur de jeu (chef d'orchestre)", "1 encadrant par poste épreuve (min 10)", "Équipe spa renforcée (rotations 200 pax)", "1 DJ / animateur soirée", "1 vidéaste (capsule J+3)"],
+  stats: [["1 / 15-20", "encadrant / pax"], ["10-12", "encadrants minimum"], ["100-200", "jauge"]],
+});
+
 // ----- PRICING -----
 children.push(h1("Grille tarifaire", OCEAN));
 children.push(para([t("Prix indicatifs par personne, TTC, base chambre double. Dégressifs selon la taille du groupe. ", {}), t("Chiffres à valider avec le contrôle de gestion (tarif chambre, food cost, masse salariale).", { italics: true, color: MUTED })], { spacing: { after: 140 } }));
 
+const cw1 = 2426, cw2 = 1320;
 const priceHeader = new TableRow({ tableHeader: true, children: [
-  cell("Offre", { w: 2826, fill: OCEAN, bold: true, color: "FFFFFF" }),
-  cell("10-15 pax", { w: 1550, fill: OCEAN, bold: true, color: "FFFFFF", align: AlignmentType.CENTER }),
-  cell("16-30 pax", { w: 1550, fill: OCEAN, bold: true, color: "FFFFFF", align: AlignmentType.CENTER }),
-  cell("31-50 pax", { w: 1550, fill: OCEAN, bold: true, color: "FFFFFF", align: AlignmentType.CENTER }),
-  cell("51-80 pax", { w: 1550, fill: OCEAN, bold: true, color: "FFFFFF", align: AlignmentType.CENTER }),
+  cell("Offre", { w: cw1, fill: OCEAN, bold: true, color: "FFFFFF" }),
+  cell("10-15 pax", { w: cw2, fill: OCEAN, bold: true, color: "FFFFFF", align: AlignmentType.CENTER }),
+  cell("16-30 pax", { w: cw2, fill: OCEAN, bold: true, color: "FFFFFF", align: AlignmentType.CENTER }),
+  cell("31-50 pax", { w: cw2, fill: OCEAN, bold: true, color: "FFFFFF", align: AlignmentType.CENTER }),
+  cell("51-80 pax", { w: cw2, fill: OCEAN, bold: true, color: "FFFFFF", align: AlignmentType.CENTER }),
+  cell("81-120 pax", { w: cw2, fill: OCEAN, bold: true, color: "FFFFFF", align: AlignmentType.CENTER }),
+  cell("100-200 pax", { w: cw2, fill: GRAND, bold: true, color: "FFFFFF", align: AlignmentType.CENTER }),
 ]});
-const priceRow = (name, a, b, c, d, accent) => new TableRow({ children: [
-  cell(name, { w: 2826, bold: true, color: accent }),
-  cell(a, { w: 1550, align: AlignmentType.CENTER }),
-  cell(b, { w: 1550, align: AlignmentType.CENTER }),
-  cell(c, { w: 1550, align: AlignmentType.CENTER }),
-  cell(d, { w: 1550, align: AlignmentType.CENTER }),
+const priceRow = (name, a, b, c, d, e, f, accent) => new TableRow({ children: [
+  cell(name, { w: cw1, bold: true, color: accent }),
+  cell(a, { w: cw2, align: AlignmentType.CENTER }),
+  cell(b, { w: cw2, align: AlignmentType.CENTER }),
+  cell(c, { w: cw2, align: AlignmentType.CENTER }),
+  cell(d, { w: cw2, align: AlignmentType.CENTER }),
+  cell(e, { w: cw2, align: AlignmentType.CENTER }),
+  cell(f, { w: cw2, align: AlignmentType.CENTER }),
 ]});
 children.push(new Table({
   width: { size: CW, type: WidthType.DXA },
-  columnWidths: [2826, 1550, 1550, 1550, 1550],
+  columnWidths: [cw1, cw2, cw2, cw2, cw2, cw2, cw2],
   rows: [
     priceHeader,
-    priceRow("Koh-Bouznika (3J/2N)", "8 200", "7 200", "6 500", "5 900", KOH),
-    priceRow("Colo des Grands (3J/2N)", "7 800", "6 900", "6 200", "—", COLO),
-    priceRow("Sound System (3J/2N)", "—", "9 500", "8 200", "7 300", SOUND),
-    priceRow("Dar Dyalna (3J/2N)", "8 600", "7 500", "6 800", "—", DAR),
-    priceRow("Good Vibes (2J/1N)", "5 200", "4 200", "—", "—", VIBES),
+    priceRow("Koh-Bouznika (3J/2N)", "8 200", "7 200", "6 500", "5 900", "5 400", "—", KOH),
+    priceRow("Colo des Grands (3J/2N)", "7 800", "6 900", "6 200", "—", "—", "—", COLO),
+    priceRow("Sound System (3J/2N)", "—", "9 500", "8 200", "7 300", "6 800", "—", SOUND),
+    priceRow("Dar Dyalna (3J/2N)", "8 600", "7 500", "6 800", "—", "—", "—", DAR),
+    priceRow("Good Vibes (2J/1N)", "5 200", "4 200", "—", "—", "—", "—", VIBES),
+    priceRow("Ocean Summit — Grand Format (3J/2N)", "—", "—", "—", "—", "5 200", "4 800", GRAND),
   ],
 }));
-children.push(new Paragraph({ spacing: { before: 60, after: 200 }, children: [t("Montants en MAD. Prix de référence (jauge standard) : Good Vibes 4 200 · Colo 6 200 · Koh-Bouznika 6 500 · Dar Dyalna 6 800 · Sound System 8 200.", { italics: true, color: MUTED, size: 18 })] }));
+children.push(new Paragraph({ spacing: { before: 60, after: 200 }, children: [t("Montants en MAD, TTC, base chambre double. Prix de référence (jauge standard) : Good Vibes 4 200 · Colo 6 200 · Koh-Bouznika 6 500 · Dar Dyalna 6 800 · Sound System 8 200 · Ocean Summit 4 800. À valider avec le contrôle de gestion.", { italics: true, color: MUTED, size: 18 })] }));
 
 children.push(h2("Suppléments & options", TEAL));
 const optRow = (label, val) => new TableRow({ children: [

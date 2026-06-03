@@ -7,3 +7,6 @@ deploy-signature/
 *.log
 *.pdf
 *.docx.png
+# fichiers de travail / annotations
+*GS.docx
+*corrigé.docx
